@@ -1,4 +1,0 @@
-name: kChat
-main: me.KeybordPiano459.kChat.kChat
-version: 1.0
-depend: [kEssentials]
