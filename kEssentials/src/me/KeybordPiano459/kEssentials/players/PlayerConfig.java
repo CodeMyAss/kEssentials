@@ -1,4 +1,4 @@
-package me.KeybordPiano459.kEssentials.config;
+package me.KeybordPiano459.kEssentials.players;
 
 import java.io.File;
 import java.io.IOException;

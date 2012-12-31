@@ -35,7 +35,7 @@ public class CommandSetwalkspeed extends kCommand implements CommandExecutor {
                         noPermissionsMessage(player);
                     }
                 } else {
-                    incorrectUsage(player, "/walkspeed <speed>");
+                    incorrectUsage(player, "/setwalkspeed <speed>");
                 }
             } else {
                 consoleError();

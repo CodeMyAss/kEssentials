@@ -58,7 +58,7 @@ public class kCommand {
     }
     
     public static void consoleError() {
-        Logger.getLogger("Minecraft").info("This command can't be executor from console!");
+        Logger.getLogger("Minecraft").info("This command can't be executed from the console!");
     }
     
     public static void incorrectUsage(Player player, String usage) {

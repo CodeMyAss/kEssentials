@@ -20,7 +20,9 @@ public class PlayerListener implements Listener {
     @EventHandler(priority=EventPriority.LOW)
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        kPlayer kplayer = plugin.getPlayerManager().getPlayer(player.getName());
+        kPlayerManager man = plugin.getPlayerManager();
+        kPlayer kplayer = man.getPlayer(player.getName());
+        kplayer.getPlayerConfig().getConfig().options().copyDefaults(true);
         kplayer.getPlayerConfig().reloadPlayerConfig();
         kplayer.getPlayerConfig().savePlayerConfig();
     }
