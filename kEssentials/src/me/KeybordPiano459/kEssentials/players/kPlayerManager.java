@@ -3,6 +3,10 @@ package me.KeybordPiano459.kEssentials.players;
 import java.util.HashMap;
 import me.KeybordPiano459.kEssentials.kEssentials;
 
+/*
+ * 
+ * @author DarkSeraphim
+ */
 public class kPlayerManager {
 
     kEssentials plugin;

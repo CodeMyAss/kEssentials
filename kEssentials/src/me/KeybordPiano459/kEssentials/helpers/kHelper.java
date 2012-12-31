@@ -1,6 +1,7 @@
 package me.KeybordPiano459.kEssentials.helpers;
 
 import me.KeybordPiano459.kEssentials.kEssentials;
+import me.KeybordPiano459.kEssentials.players.PlayerListener;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 
@@ -16,6 +17,8 @@ public class kHelper {
         getHelper(new EnderChest(plugin));
         getHelper(new MOTD(plugin));
         getHelper(new Mute(plugin));
+        
+        getHelper(new PlayerListener(plugin));
     }
     
     public void getHelper(Listener listener) {
