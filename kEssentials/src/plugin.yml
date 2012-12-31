@@ -42,9 +42,9 @@ commands:
   itemname:
     description: Name the item in your hand
     aliases: [nameitem, kitemname, knameitem]
-  kessentials:
-    description: Various actions related to kEssentials
-    aliases: [kes]
+#  kessentials:
+#    description: Various actions related to kEssentials
+#    aliases: [kes]
   me:
     description: Perform an action in the chat
     aliases: [action, kaction, kme]
@@ -54,9 +54,9 @@ commands:
   mute:
     description: Make it so that someone can't chat
     aliases: [silence, kmute, ksilence]
-  myhead:
-    description: Get your very own head
-    aliases: [head, khead, kmyhead]
+#  myhead:
+#    description: Get your very own head
+#    aliases: [head, khead, kmyhead]
   night:
     description: Make it nighttime in your world
     aliases: [nighttime, knight, knighttime]
@@ -81,12 +81,21 @@ commands:
   setwalkspeed:
     description: Set your own walk speed
     aliases: [sws, ws, ksetwalkspeed, ksws, kws]
+  setwarp:
+    description: Set a warp location
+    aliases: [ksetwarp]
   spawner:
     description: Change a spawner's mob type
     aliases: [kspawner]
   unmute:
     description: Un-mute a person
     aliases: [unsilence, kunmute, kunsilence]
+  warp:
+    description: Warp to a set location
+    aliases: [kwarp]
+  warplist:
+    description: List all set warps
+    aliases: [wl, kwarplist, kwl]
   workbench:
     description: Open up a crafting table
     aliases: [craft, kcraft, kworkbench]
@@ -114,7 +123,7 @@ permissions:
       kessentials.itemname: true
       kessentials.motd: true
       kessentials.mute: true
-      kessentials.myhead: true
+#      kessentials.myhead: true
       kessentials.night: true
       kessentials.online: true
       kessentials.ping: true
@@ -123,8 +132,11 @@ permissions:
       kessentials.repair: true
       kessentials.sethome: true
       kessentials.setwalkspeed: true
+      kessentials.setwarp: true
       kessentials.spawner: true
       kessentials.unmute: true
+      kessentials.warp: true
+      kessentials.warplist: true
       kessentials.workbench: true
 #      kessentials.worldtime: true
   kessentials.back:
@@ -145,6 +157,9 @@ permissions:
   kessentials.hat:
     description: /hat
     default: op
+  kessentials.home:
+    description: /home
+    default: true
   kessentials.itemname:
     description: /itemname <name>
     default: op
@@ -154,15 +169,15 @@ permissions:
   kessentials.mute:
     description: /mute <player>
     default: op
-  kessentials.myhead:
-    description: /myhead
-    default: op
+#  kessentials.myhead:
+#    description: /myhead
+#    default: op
   kessentials.night:
     description: /night
     default: op
   kessentials.online:
     description: /online <player>
-    default: op
+    default: true
   kessentials.ping:
     description: /ping
     default: true
@@ -175,8 +190,14 @@ permissions:
   kessentials.repair:
     description: /repair
     default: op
+  kessentials.sethome:
+    description: /sethome
+    default: true
   kessentials.setwalkspeed:
     description: /setwalkspeed
+    default: op
+  kessentials.setwarp:
+    description: /setwarp
     default: op
   kessentials.spawner:
     description: /spawner
@@ -184,6 +205,12 @@ permissions:
   kessentials.unmute:
     description: /unmute <player>
     default: op
+  kessentials.warp:
+    description: /warp
+    default: true
+  kessentials.warplist:
+    description: /warplist
+    default: true
   kessentials.workbench:
     description: /workbench
     default: op
