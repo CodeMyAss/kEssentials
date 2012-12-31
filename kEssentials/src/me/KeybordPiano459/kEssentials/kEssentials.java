@@ -7,8 +7,9 @@ import me.KeybordPiano459.kEssentials.helpers.MOTD;
 import me.KeybordPiano459.kEssentials.helpers.Mute;
 import me.KeybordPiano459.kEssentials.helpers.Warps;
 import me.KeybordPiano459.kEssentials.helpers.kHelper;
+import me.KeybordPiano459.kEssentials.metrics.BukkitMetrics;
+import me.KeybordPiano459.kEssentials.metrics.MetricsGraph;
 import me.KeybordPiano459.kEssentials.players.kPlayerManager;
-import me.KeybordPiano459.kEssentials.util.BukkitMetrics;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,8 +19,8 @@ public class kEssentials extends JavaPlugin {
     private kHelper khelper = new kHelper(this);
     private kPlayerManager playerManager;
     private MOTD motd = new MOTD(this);
-    public Mute mute;
     private Warps warps = new Warps(this);
+    public Mute mute;
     
     private String s = File.separator;
     private File folder = new File("plugins" + s + "kEssentials");
@@ -36,6 +37,8 @@ public class kEssentials extends JavaPlugin {
         
         try {
             BukkitMetrics metrics = new BukkitMetrics(this);
+            MetricsGraph graph = new MetricsGraph();
+            graph.addAddonsGraph(metrics);
             metrics.start();
         } catch (IOException e) {
             e.printStackTrace();
