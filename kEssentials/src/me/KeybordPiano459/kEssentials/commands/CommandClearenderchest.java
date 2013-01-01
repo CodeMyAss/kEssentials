@@ -1,7 +1,6 @@
 package me.KeybordPiano459.kEssentials.commands;
 
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

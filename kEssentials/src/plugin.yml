@@ -45,6 +45,9 @@ commands:
   ignite:
     description: Set someone on fire
     aliases: [burn, kburn, kignite]
+  ip:
+    description: View another player's IP
+    aliases: [kip]
   itemname:
     description: Name the item in your hand
     aliases: [nameitem, kitemname, knameitem]
@@ -54,6 +57,9 @@ commands:
   kick:
     description: Kick a player from the server
     aliases: []
+  kickall:
+    description: Kick everybody on the server
+    aliases: [masskick, kmasskick]
   kill:
     description: Kill another player instantly
     aliases: [murder, kmurder]
@@ -151,13 +157,14 @@ permissions:
       kessentials.clearinventory.*: true
       kessentials.day: true
       kessentials.delwarp: true
-      kessentials.enderchest.*: true
+      kessentials.enderchest: true
       kessentials.garbagecollector: true
       kessentials.getid: true
       kessentials.god: true
       kessentials.hat: true
       kessentials.home: true
-      kessentials.ignite.*: true
+      kessentials.ignite: true
+      kessentials.ip: true
       kessentials.itemname: true
       kessentials.kick: true
       kessentials.kill: true
@@ -199,6 +206,9 @@ permissions:
   kessentials.delwarp:
     description: /delwarp <warp>
     default: op
+  kessentials.enderchest:
+    description: /enderchest <player>
+    default: op
   kessentials.garbagecollector:
     description: /garbagecollector
     default: true
@@ -213,6 +223,12 @@ permissions:
     default: op
   kessentials.home:
     description: /home
+    default: true
+  kessentials.ignite:
+    description: /ignite <player>
+    default: op
+  kessentials.ip:
+    description: /ip <player>
     default: true
   kessentials.itemname:
     description: /itemname <name>
@@ -326,30 +342,4 @@ permissions:
     default: op
   kessentials.clearinventory.self:
     description: /clearinventory
-    default: true
-
-  kessentials.enderchest.*:
-    description: All enderchest permissions
-    default: op
-    children:
-      kessentials.enderchest.others: true
-      kessentials.enderchest.self: true
-  kessentials.enderchest.others:
-    description: /enderchest [player]
-    default: op
-  kessentials.enderchest.self:
-    description: /enderchest
-    default: op
-
-  kessentials.ignite.*:
-    description: All ignite permissions
-    default: op
-    children:
-      kessentials.ignite.others: true
-      kessentials.ignite.self: true
-  kessentials.ignite.others:
-    description: /ignite [player]
-    default: op
-  kessentials.ignite.self:
-    description: /ignite
     default: true

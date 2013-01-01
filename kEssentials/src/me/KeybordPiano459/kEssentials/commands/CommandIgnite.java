@@ -20,14 +20,14 @@ public class CommandIgnite extends kCommand implements CommandExecutor {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 if (args.length == 0) {
-                    if (player.hasPermission("kessentials.ignite.self")) {
+                    if (player.hasPermission("kessentials.ignite")) {
                         player.setFireTicks(200);
                         player.sendMessage(GREEN + "You have been ignited!");
                     } else {
                         noPermissionsMessage(player);
                     }
                 } else if (args.length == 1) {
-                    if (player.hasPermission("kessentials.ignite.others")) {
+                    if (player.hasPermission("kessentials.ignite")) {
                         Player tplayer = Bukkit.getServer().getPlayer(args[0]);
                         if (tplayer != null) {
                             tplayer.setFireTicks(200);

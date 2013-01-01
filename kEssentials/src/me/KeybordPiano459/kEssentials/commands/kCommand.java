@@ -35,8 +35,10 @@ public class kCommand {
         getCommand("hat", new CommandHat(plugin));
         getCommand("home", new CommandHome(plugin));
         getCommand("ignite", new CommandIgnite(plugin));
+        getCommand("ip", new CommandIp(plugin));
         getCommand("itemname", new CommandItemname(plugin));
         getCommand("kick", new CommandKick(plugin));
+        getCommand("kickall", new CommandKickall(plugin));
         getCommand("kill", new CommandKill(plugin));
         getCommand("killall", new CommandKillall(plugin));
         getCommand("me", new CommandMe(plugin));
