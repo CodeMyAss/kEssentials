@@ -18,6 +18,7 @@ public class kHelper {
         getHelper(plugin.getGod());
         getHelper(new MOTD(plugin));
         getHelper(new Mute(plugin));
+        getHelper(plugin.getTPS());
         
         getHelper(new PlayerListener(plugin));
     }

@@ -19,6 +19,7 @@ public class kEssentials extends JavaPlugin {
     private Warps warps = new Warps(this);
     private Spawn spawn = new Spawn(this);
     private God god;
+    private TPS tps;
     public Mute mute;
     
     private String s = File.separator;
@@ -60,6 +61,7 @@ public class kEssentials extends JavaPlugin {
         god = new God(this);
         mute = new Mute(this);
         playerManager = new kPlayerManager(this);
+        tps = new TPS(this);
     }
     
     public kPlayerManager getPlayerManager() {
@@ -68,5 +70,9 @@ public class kEssentials extends JavaPlugin {
     
     public God getGod() {
         return this.god;
+    }
+    
+    public TPS getTPS() {
+        return this.tps;
     }
 }

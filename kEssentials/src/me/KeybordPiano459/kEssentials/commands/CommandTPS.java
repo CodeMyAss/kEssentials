@@ -1,7 +1,6 @@
 package me.KeybordPiano459.kEssentials.commands;
 
 import java.util.logging.Level;
-import me.KeybordPiano459.kEssentials.helpers.TPS;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,8 +12,6 @@ public class CommandTPS extends kCommand implements CommandExecutor {
         super(plugin);
     }
     
-    private TPS tps;
-    
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase("tps")) {
@@ -22,7 +19,7 @@ public class CommandTPS extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.tps")) {
-                        player.sendMessage(GREEN + "Current server TPS: " + tps.getServerTPS());
+                        player.sendMessage(GREEN + "Current server TPS: " + plugin.getTPS().getServerTPS());
                     } else {
                         noPermissionsMessage(player);
                     }
@@ -31,7 +28,7 @@ public class CommandTPS extends kCommand implements CommandExecutor {
                 }
             } else {
                 if (args.length == 0) {
-                    log(Level.INFO, "Current server TPS: " + tps.getServerTPS());
+                    log(Level.INFO, "Current server TPS: " + plugin.getTPS().getServerTPS());
                 } else {
                     incorrectUsageC("/tps");
                 }
