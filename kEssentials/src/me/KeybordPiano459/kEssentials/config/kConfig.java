@@ -58,6 +58,8 @@ public class kConfig {
             w(w, "# How far away from the player should messages be \"heard\" from?");
             w(w, "# Set to 0 for infinite (vanilla minecraft)");
             w(w, "chat-radius: 100\n");
+            w(w, "# Do you want to use the kChat spam blocker?");
+            w(w, "use-spam-blocker: true\n");
             w(w, "\n\n");
             w(w, "##################################################");
             w(w, "# +--------------------------------------------+ #");

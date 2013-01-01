@@ -26,6 +26,9 @@ colors-allowed-chat: true
 # Set to 0 for infinite (vanilla minecraft)
 chat-radius: 100
 
+# Do you want to use the kChat spam blocker?
+use-spam-blocker: true
+
 
 
 
