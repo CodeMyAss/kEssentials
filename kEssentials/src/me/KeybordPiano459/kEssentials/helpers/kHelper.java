@@ -15,7 +15,7 @@ public class kHelper {
         getHelper(new Back(plugin));
         getHelper(new Backpack(plugin));
         getHelper(new EnderChest(plugin));
-        getHelper(new God(plugin));
+        getHelper(plugin.getGod());
         getHelper(new MOTD(plugin));
         getHelper(new Mute(plugin));
         

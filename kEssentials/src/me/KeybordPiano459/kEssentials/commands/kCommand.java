@@ -61,7 +61,6 @@ public class kCommand {
         getCommand("suicide", new CommandSuicide(plugin));
         getCommand("sun", new CommandSun(plugin));
         getCommand("tps", new CommandTPS(plugin));
-        getCommand("ungod", new CommandUngod(plugin));
         getCommand("unmute", new CommandUnmute(plugin));
         getCommand("warp", new CommandWarp(plugin));
         getCommand("warplist", new CommandWarplist(plugin));

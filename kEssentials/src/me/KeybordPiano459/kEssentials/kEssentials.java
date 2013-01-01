@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import me.KeybordPiano459.kEssentials.commands.kCommand;
 import me.KeybordPiano459.kEssentials.config.kConfig;
+import me.KeybordPiano459.kEssentials.helpers.God;
 import me.KeybordPiano459.kEssentials.helpers.MOTD;
 import me.KeybordPiano459.kEssentials.helpers.Mute;
 import me.KeybordPiano459.kEssentials.helpers.Spawn;
@@ -23,6 +24,7 @@ public class kEssentials extends JavaPlugin {
     private MOTD motd = new MOTD(this);
     private Warps warps = new Warps(this);
     private Spawn spawn = new Spawn(this);
+    private God god;
     public Mute mute;
     
     private String s = File.separator;
@@ -31,15 +33,16 @@ public class kEssentials extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("kEssentials v1.0 has been enabled!");
-        khelper.getHelpers();
-        kcommand.getCommands();
         folder.mkdirs();
         motd.createMOTD();
         warps.generateWarpsConfig();
         spawn.generateSpawnConfig();
         playerManager = new kPlayerManager(this);
+        god = new God(this);
         mute = new Mute(this);
         kconfig.createConfig();
+        khelper.getHelpers();
+        kcommand.getCommands();
         
         try {
             BukkitMetrics metrics = new BukkitMetrics(this);
@@ -58,5 +61,9 @@ public class kEssentials extends JavaPlugin {
     
     public kPlayerManager getPlayerManager() {
         return this.playerManager;
+    }
+    
+    public God getGod() {
+        return this.god;
     }
 }

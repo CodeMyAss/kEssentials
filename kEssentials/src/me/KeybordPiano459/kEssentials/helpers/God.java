@@ -1,6 +1,6 @@
 package me.KeybordPiano459.kEssentials.helpers;
 
-import java.util.HashMap;
+import java.util.HashSet;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -14,14 +14,14 @@ public class God implements Listener {
         God.plugin = plugin;
     }
     
-    public HashMap<String, Boolean> godmode = new HashMap<String, Boolean>();
+    public HashSet<String> godmode = new HashSet<String>();
     
     @EventHandler
     public void onDmg(EntityDamageEvent event) {
         Entity entity = event.getEntity();
         if (entity instanceof Player) {
             Player player = (Player) entity;
-            if (godmode.get(player.getName())) {
+            if (godmode.contains(player.getName())) {
                 event.setCancelled(true);
             }
         }

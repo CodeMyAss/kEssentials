@@ -1,6 +1,5 @@
 package me.KeybordPiano459.kEssentials.commands;
 
-import me.KeybordPiano459.kEssentials.helpers.God;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,7 +11,6 @@ public class CommandGod extends kCommand implements CommandExecutor {
         super(plugin);
     }
     
-    private God god;
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -21,8 +19,12 @@ public class CommandGod extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.god")) {
-                        god.godmode.put(player.getName(), true);
-                        player.sendMessage(GREEN + "You now have god mode enabled!");
+                        if (plugin.getGod().godmode.contains(player.getName())) {
+                            plugin.getGod().godmode.remove(player.getName());
+                        } else {
+                            plugin.getGod().godmode.add(player.getName());
+                        }
+                        player.sendMessage(GREEN + "You now have godmode " + (plugin.getGod().godmode.contains(player.getName()) ? "enabled!" : "disabled."));
                     } else {
                         noPermissionsMessage(player);
                     }

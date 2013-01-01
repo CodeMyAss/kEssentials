@@ -34,7 +34,7 @@ commands:
     description: Get the ID of what you're holding
     aliases: [handid, kgetid, khandid]
   god:
-    description: Make yourself invincible!
+    description: Toggle godmode on and off
     aliases: [invincible, kgod, kinvincible]
   hat:
     description: Wear a block on your head
@@ -129,9 +129,6 @@ commands:
   tps:
     description: Check the server's TPS rate
     aliases: [ktps]
-  ungod:
-    description: Make yourself vulnerable again
-    aliases: [vulnerable, kungod, kvulnerable]
   unmute:
     description: Un-mute a person
     aliases: [unsilence, kunmute, kunsilence]
@@ -192,7 +189,6 @@ permissions:
       kessentials.suicide: true
       kessentials.sun: true
       kessentials.tps: true
-      kessentials.ungod: true
       kessentials.unmute: true
       kessentials.warp: true
       kessentials.warplist: true
@@ -303,9 +299,6 @@ permissions:
   kessentials.tps:
     description: /tps
     default: true
-  kessentials.ungod:
-    description: /ungod
-    default: op
   kessentials.unmute:
     description: /unmute <player>
     default: op
