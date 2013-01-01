@@ -14,7 +14,7 @@ public class kEssentials extends JavaPlugin {
     private kCommand kcommand = new kCommand(this);
     private kHelper khelper = new kHelper(this);
     private kPlayerManager playerManager;
-    private kConfig kconfig = new kConfig(this);
+    private kConfig kconfig;
     private MOTD motd = new MOTD(this);
     private Warps warps = new Warps(this);
     private Spawn spawn = new Spawn(this);
@@ -59,9 +59,14 @@ public class kEssentials extends JavaPlugin {
     
     private void registerInstances() {
         god = new God(this);
+        kconfig = new kConfig(this);
         mute = new Mute(this);
         playerManager = new kPlayerManager(this);
         tps = new TPS(this);
+    }
+    
+    public kConfig getkConfig() {
+        return this.kconfig;
     }
     
     public kPlayerManager getPlayerManager() {
@@ -73,6 +78,6 @@ public class kEssentials extends JavaPlugin {
     }
     
     public TPS getTPS() {
-        return this.tps;
+        return this.tps; 
     }
 }

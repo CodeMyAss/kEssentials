@@ -2,7 +2,6 @@ package me.KeybordPiano459.kEssentials.commands;
 
 import java.util.HashMap;
 import java.util.logging.Level;
-import me.KeybordPiano459.kEssentials.config.kConfig;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -15,8 +14,7 @@ public class CommandHeal extends kCommand implements CommandExecutor {
         super(plugin);
     }
     
-    private HashMap<String, Integer> healcooldown = new HashMap<String, Integer>();
-    private kConfig kconfig;
+    public static HashMap<String, Integer> healcooldown = new HashMap<String, Integer>();
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -27,12 +25,14 @@ public class CommandHeal extends kCommand implements CommandExecutor {
                     if (player.hasPermission("kessentials.heal.self")) {
                         if (healcooldown.get(player.getName()) == 0) {
                             player.setHealth(20);
+                            player.setFireTicks(0);
                             player.sendMessage(GREEN + "You have healed yourself.");
-                            healcooldown.put(player.getName(), kconfig.getConfig().getInt("heal-cooldown"));
+                            healcooldown.put(player.getName(), plugin.getkConfig().getConfig().getInt("heal-cooldown"));
                             resetCooldownHeal(player);
                         } else {
                             if (player.hasPermission("kessentials.heal.bypass")) {
                                 player.setHealth(20);
+                                player.setFireTicks(0);
                                 player.sendMessage(GREEN + "You have healed yourself.");
                             } else {
                                 player.sendMessage(RED + "You still need to wait " + healcooldown.get(player.getName()) + " seconds before you can use /heal again.");
@@ -47,6 +47,7 @@ public class CommandHeal extends kCommand implements CommandExecutor {
                         if (tplayer != null) {
                             if (healcooldown.get(player.getName()) == 0) {
                                 tplayer.setHealth(20);
+                                tplayer.setFireTicks(0);
                                 tplayer.sendMessage(DARK_GRAY + "You have been healed.");
                                 player.sendMessage(GREEN + "You have healed " + tplayer.getName());
                             } else {
@@ -67,6 +68,7 @@ public class CommandHeal extends kCommand implements CommandExecutor {
                     Player tplayer = Bukkit.getServer().getPlayer(args[0]);
                     if (tplayer != null) {
                         tplayer.setHealth(20);
+                        tplayer.setFireTicks(0);
                         tplayer.sendMessage(DARK_GRAY + "You have been healed.");
                         log(Level.INFO, "You have healed " + tplayer.getName());
                     } else {
