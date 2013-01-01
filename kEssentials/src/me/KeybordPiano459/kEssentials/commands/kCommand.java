@@ -42,6 +42,7 @@ public class kCommand {
         getCommand("night", new CommandNight(plugin));
         getCommand("online", new CommandOnline(plugin));
         getCommand("ping", new CommandPing(plugin));
+        getCommand("rain", new CommandRain(plugin));
         getCommand("ram", new CommandRam(plugin));
         getCommand("remove", new CommandRemove(plugin));
         getCommand("repair", new CommandRepair(plugin));
@@ -51,6 +52,8 @@ public class kCommand {
         getCommand("setwarp", new CommandSetwarp(plugin));
         getCommand("spawn", new CommandSpawn(plugin));
         getCommand("spawner", new CommandSpawner(plugin));
+        getCommand("suicide", new CommandSuicide(plugin));
+        getCommand("sun", new CommandSun(plugin));
         getCommand("tps", new CommandTPS(plugin));
         getCommand("ungod", new CommandUngod(plugin));
         getCommand("unmute", new CommandUnmute(plugin));

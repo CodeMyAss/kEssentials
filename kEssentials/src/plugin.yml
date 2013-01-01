@@ -72,6 +72,9 @@ commands:
   ping:
     description: Useful to check if you're lagging
     aliases: [pong, kping, kpong]
+  rain:
+    description: Turn on a storm in your world
+    aliases: [storm, kstorm, krain]
   ram:
     description: See the server's RAM usage
     aliases: [speed, kram, kspeed]
@@ -99,6 +102,12 @@ commands:
   spawner:
     description: Change a spawner's mob type
     aliases: [kspawner]
+  suicide:
+    description: Take a guess...
+    aliases: [ksuicide]
+  sun:
+    description: Turn the weather off in your world
+    aliases: [ksun]
   tps:
     description: Check the server's TPS rate
     aliases: [ktps]
@@ -147,6 +156,7 @@ permissions:
       kessentials.night: true
       kessentials.online: true
       kessentials.ping: true
+      kessentials.rain: true
       kessentials.ram: true
       kessentials.remove: true
       kessentials.repair: true
@@ -156,6 +166,8 @@ permissions:
       kessentials.setwarp: true
       kessentials.spawn: true
       kessentials.spawner: true
+      kessentials.suicide: true
+      kessentials.sun: true
       kessentials.tps: true
       kessentials.ungod: true
       kessentials.unmute: true
@@ -211,6 +223,9 @@ permissions:
   kessentials.ping:
     description: /ping
     default: true
+  kessentials.rain:
+    description: /rain
+    default: op
   kessentials.ram:
     description: /ram
     default: true
@@ -237,6 +252,12 @@ permissions:
     default: true
   kessentials.spawner:
     description: /spawner
+    default: op
+  kessentials.suicide:
+    description: /suicide
+    default: true
+  kessentials.sun:
+    description: /sun
     default: op
   kessentials.tps:
     description: /tps
