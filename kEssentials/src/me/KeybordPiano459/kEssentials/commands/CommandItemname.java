@@ -24,11 +24,9 @@ public class CommandItemname extends kCommand implements CommandExecutor {
                         String name = args[0];
                         if (player.getItemInHand().getType() != Material.AIR) {
                             ItemStack item = player.getItemInHand();
-                            player.getInventory().removeItem(item);
                             ItemMeta meta = item.getItemMeta();
                             meta.setDisplayName(name);
                             item.setItemMeta(meta);
-                            player.getInventory().addItem(item);
                             player.sendMessage(GREEN + "Your item is now named " + name + ".");
                         } else {
                             player.sendMessage(RED + "You need to be holding an item in your hand.");

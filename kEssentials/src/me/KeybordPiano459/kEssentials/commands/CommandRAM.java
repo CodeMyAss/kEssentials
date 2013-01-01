@@ -1,7 +1,6 @@
 package me.KeybordPiano459.kEssentials.commands;
 
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import me.KeybordPiano459.kEssentials.helpers.RAM;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.command.Command;
@@ -14,8 +13,6 @@ public class CommandRam extends kCommand implements CommandExecutor {
         super(plugin);
     }
     
-    private RAM ram;
-    
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase("ram")) {
@@ -23,9 +20,9 @@ public class CommandRam extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.ram")) {
-                        player.sendMessage(GREEN + "Free RAM: " + ram.getFreeRAM() + "MB");
-                        player.sendMessage(GREEN + "Max RAM: " + ram.getMaxRAM() + "MB");
-                        player.sendMessage(GREEN + "Used RAM: " + ram.getUsedRAM() + "MB");
+                        player.sendMessage(GREEN + "Free RAM: " + RAM.getFreeRAM() + "MB");
+                        player.sendMessage(GREEN + "Max RAM: " + RAM.getMaxRAM() + "MB");
+                        player.sendMessage(GREEN + "Used RAM: " + RAM.getUsedRAM() + "MB");
                     } else {
                         noPermissionsMessage(player);
                     }
@@ -34,9 +31,9 @@ public class CommandRam extends kCommand implements CommandExecutor {
                 }
             } else {
                 if (args.length == 0) {
-                    log(Level.INFO, "Free RAM: " + ram.getFreeRAM() + "MB");
-                    log(Level.INFO, "Max RAM: " + ram.getMaxRAM() + "MB");
-                    log(Level.INFO, "Used RAM: " + ram.getUsedRAM() + "MB");
+                    log(Level.INFO, "Free RAM: " + RAM.getFreeRAM() + "MB");
+                    log(Level.INFO, "Max RAM: " + RAM.getMaxRAM() + "MB");
+                    log(Level.INFO, "Used RAM: " + RAM.getUsedRAM() + "MB");
                 } else {
                     incorrectUsageC("/ram");
                 }
