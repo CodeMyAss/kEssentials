@@ -6,6 +6,7 @@ import me.KeybordPiano459.kEssentials.commands.kCommand;
 import me.KeybordPiano459.kEssentials.config.kConfig;
 import me.KeybordPiano459.kEssentials.helpers.MOTD;
 import me.KeybordPiano459.kEssentials.helpers.Mute;
+import me.KeybordPiano459.kEssentials.helpers.Spawn;
 import me.KeybordPiano459.kEssentials.helpers.Warps;
 import me.KeybordPiano459.kEssentials.helpers.kHelper;
 import me.KeybordPiano459.kEssentials.metrics.BukkitMetrics;
@@ -21,6 +22,7 @@ public class kEssentials extends JavaPlugin {
     private kConfig kconfig = new kConfig(this);
     private MOTD motd = new MOTD(this);
     private Warps warps = new Warps(this);
+    private Spawn spawn = new Spawn(this);
     public Mute mute;
     
     private String s = File.separator;
@@ -29,11 +31,12 @@ public class kEssentials extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("kEssentials v1.0 has been enabled!");
-        kcommand.getCommands();
         khelper.getHelpers();
+        kcommand.getCommands();
         folder.mkdirs();
         motd.createMOTD();
         warps.generateWarpsConfig();
+        spawn.generateSpawnConfig();
         playerManager = new kPlayerManager(this);
         mute = new Mute(this);
         kconfig.createConfig();

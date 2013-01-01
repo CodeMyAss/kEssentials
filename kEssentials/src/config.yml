@@ -1,0 +1,45 @@
+##################################################
+# +--------------------------------------------+ #
+# |                kEssentials                 | #
+# +--------------------------------------------+ #
+##################################################
+
+# Should players see the MOTD when they log in?
+motd-on-login: true
+
+
+
+
+##################################################
+# +--------------------------------------------+ #
+# |                   kChat                    | #
+# +--------------------------------------------+ #
+##################################################
+
+# What color should an op's name be? Set to 'none' for no change
+op-name-color: '&c'
+
+# Should color symbols be allowed in the chat?
+colors-allowed-chat: true
+
+# How far away from the player should messages be "heard" from?
+# Set to 0 for infinite (vanilla minecraft)
+chat-radius: 100
+
+
+
+
+##################################################
+# +--------------------------------------------+ #
+# |                  kEconomy                  | #
+# +--------------------------------------------+ #
+##################################################
+
+# This is the amount of money that players start with
+starting-balance: 30
+
+# This is what will be displayed with money ($10)
+currency-symbol: '$'
+
+# Changes in players' money will be logged
+log-economy-data: true

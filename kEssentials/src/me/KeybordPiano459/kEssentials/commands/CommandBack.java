@@ -21,7 +21,7 @@ public class CommandBack extends kCommand implements CommandExecutor {
                     if (player.hasPermission("kessentials.back")) {
                         if (Back.getBackLocation(player) != null) {
                             player.teleport(Back.getBackLocation(player));
-                            player.sendMessage(GREEN + "You have teleported to yuor last location.");
+                            player.sendMessage(GREEN + "You have teleported to your last location.");
                         } else {
                             player.sendMessage(RED + "There isn't a location to go back to.");
                         }

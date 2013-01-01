@@ -27,6 +27,7 @@ public class kCommand {
         getCommand("clearenderchest", new CommandClearenderchest(plugin));
         getCommand("clearinventory", new CommandClearinventory(plugin));
         getCommand("day", new CommandDay(plugin));
+        getCommand("delwarp", new CommandDelwarp(plugin));
         getCommand("enderchest", new CommandEnderchest(plugin));
         getCommand("garbagecollector", new CommandGarbagecollector(plugin));
         getCommand("getid", new CommandGetid(plugin));
@@ -44,8 +45,9 @@ public class kCommand {
         getCommand("remove", new CommandRemove(plugin));
         getCommand("repair", new CommandRepair(plugin));
         getCommand("sethome", new CommandSethome(plugin));
-        getCommand("setwalkspeed", new CommandSetwalkspeed(plugin));
+        getCommand("setspawn", new CommandSetspawn(plugin));
         getCommand("setwarp", new CommandSetwarp(plugin));
+        getCommand("spawn", new CommandSpawn(plugin));
         getCommand("spawner", new CommandSpawner(plugin));
         getCommand("unmute", new CommandUnmute(plugin));
         getCommand("warp", new CommandWarp(plugin));

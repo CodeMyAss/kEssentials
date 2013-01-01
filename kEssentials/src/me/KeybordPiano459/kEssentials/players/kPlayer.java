@@ -1,5 +1,6 @@
 package me.KeybordPiano459.kEssentials.players;
 
+import me.KeybordPiano459.kEssentials.config.PlayerConfig;
 import me.KeybordPiano459.kEssentials.kEssentials;
 
 /*

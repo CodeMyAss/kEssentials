@@ -21,6 +21,9 @@ commands:
   day:
     description: Make it daytime in your world
     aliases: [daytime, kday, kdaytime]
+  delwarp:
+    description: Delete an already set warp
+    aliases: [deletewarp, kdeletewarp, kdelwarp]
   enderchest:
     description: View someone's enderchest
     aliases: [viewender, seeender, kenderchest, kseeender, kviewender]
@@ -78,12 +81,15 @@ commands:
   sethome:
     description: Set your home
     aliases: [ksethome]
-  setwalkspeed:
-    description: Set your own walk speed
-    aliases: [sws, ws, ksetwalkspeed, ksws, kws]
+  setspawn:
+    description: Set the server spawn
+    aliases: [ksetspawn]
   setwarp:
     description: Set a warp location
     aliases: [ksetwarp]
+  spawn:
+    description: Teleport to the server spawn
+    aliases: [kspawn]
   spawner:
     description: Change a spawner's mob type
     aliases: [kspawner]
@@ -114,6 +120,7 @@ permissions:
       kessentials.clearenderchest.*: true
       kessentials.clearinventory.*: true
       kessentials.day: true
+      kessentials.delwarp: true
       kessentials.enderchest.*: true
       kessentials.garbagecollector: true
       kessentials.getid: true
@@ -131,8 +138,9 @@ permissions:
       kessentials.remove: true
       kessentials.repair: true
       kessentials.sethome: true
-      kessentials.setwalkspeed: true
+      kessentials.setspawn: true
       kessentials.setwarp: true
+      kessentials.spawn: true
       kessentials.spawner: true
       kessentials.unmute: true
       kessentials.warp: true
@@ -147,6 +155,9 @@ permissions:
     default: op
   kessentials.day:
     description: /day
+    default: op
+  kessentials.delwarp:
+    description: /delwarp <warp>
     default: op
   kessentials.garbagecollector:
     description: /garbagecollector
@@ -193,12 +204,15 @@ permissions:
   kessentials.sethome:
     description: /sethome
     default: true
-  kessentials.setwalkspeed:
-    description: /setwalkspeed
+  kessentials.setspawn:
+    description: /setspawn
     default: op
   kessentials.setwarp:
     description: /setwarp
     default: op
+  kessentials.spawn:
+    description: /spawn
+    default: true
   kessentials.spawner:
     description: /spawner
     default: op

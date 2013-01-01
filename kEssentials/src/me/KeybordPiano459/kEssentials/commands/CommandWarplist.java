@@ -2,13 +2,9 @@ package me.KeybordPiano459.kEssentials.commands;
 
 import me.KeybordPiano459.kEssentials.helpers.Warps;
 import me.KeybordPiano459.kEssentials.kEssentials;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 public class CommandWarplist extends kCommand implements CommandExecutor {
@@ -25,13 +21,20 @@ public class CommandWarplist extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.warplist")) {
-                        int amount = 0;
-                        player.sendMessage("----- [" + GREEN + "Warps" + RESET + "] -----");
-                        for (String warp : warps.getWarpsConfig().getConfigurationSection("warps.").getKeys(false)) {
-                            amount++;
-                            player.sendMessage(amount + ". " + GREEN + warp);
+                        if (warps.getWarpsConfig().getConfigurationSection("warps.") != null) {
+                            int amount = 0;
+                            player.sendMessage("----- [" + GREEN + "Warps" + RESET + "] -----");
+                            for (String warp : warps.getWarpsConfig().getConfigurationSection("warps.").getKeys(false)) {
+                                amount++;
+                                player.sendMessage(amount + ". " + GREEN + warp);
+                                if (amount == 0) {
+                                    player.sendMessage(RED + "No warps have been set yet.");
+                                }
+                            }
+                            player.sendMessage("----- [" + GREEN + "Warps" + RESET + "] -----");
+                        } else {
+                            player.sendMessage(RED + "No warps have been set yet.");
                         }
-                        player.sendMessage("----- [" + GREEN + "Warps" + RESET + "] -----");
                     } else {
                         noPermissionsMessage(player);
                     }

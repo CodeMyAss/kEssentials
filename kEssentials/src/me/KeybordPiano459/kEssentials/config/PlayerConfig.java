@@ -1,4 +1,4 @@
-package me.KeybordPiano459.kEssentials.players;
+package me.KeybordPiano459.kEssentials.config;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,11 +12,13 @@ public class PlayerConfig {
 
     kEssentials plugin;
     String player;
-
+    
     public PlayerConfig(kEssentials plugin, String name) {
         this.plugin = plugin;
         this.player = name;
     }
+    
+    private kConfig kconfig;
     public FileConfiguration customConfig = null;
     public File customConfigFile = null;
 
@@ -33,6 +35,7 @@ public class PlayerConfig {
         reloadPlayerConfig();
         this.customConfig.set("muted", false);
         this.customConfig.set("backpack", "54;");
+        this.customConfig.set("money", kconfig.getConfig().getDouble("starting-balance"));
         //getPlayerConfig(player).set("money", kConfig.getConfig().getDouble("starting-balance"));
         savePlayerConfig();
     }
