@@ -33,6 +33,9 @@ commands:
   getid:
     description: Get the ID of what you're holding
     aliases: [handid, kgetid, khandid]
+  god:
+    description: Make yourself invincible!
+    aliases: [invincible, kgod, kinvincible]
   hat:
     description: Wear a block on your head
     aliases: [khat]
@@ -78,6 +81,9 @@ commands:
   repair:
     description: Repair the item in your hand
     aliases: [krepair]
+  rules:
+    description: View the server rules
+    aliases: [krules]
   sethome:
     description: Set your home
     aliases: [ksethome]
@@ -93,6 +99,12 @@ commands:
   spawner:
     description: Change a spawner's mob type
     aliases: [kspawner]
+  tps:
+    description: Check the server's TPS rate
+    aliases: [ktps]
+  ungod:
+    description: Make yourself vulnerable again
+    aliases: [vulnerable, kungod, kvulnerable]
   unmute:
     description: Un-mute a person
     aliases: [unsilence, kunmute, kunsilence]
@@ -124,6 +136,7 @@ permissions:
       kessentials.enderchest.*: true
       kessentials.garbagecollector: true
       kessentials.getid: true
+      kessentials.god: true
       kessentials.hat: true
       kessentials.home: true
       kessentials.ignite.*: true
@@ -137,11 +150,14 @@ permissions:
       kessentials.ram: true
       kessentials.remove: true
       kessentials.repair: true
+      kessentials.rules: true
       kessentials.sethome: true
       kessentials.setspawn: true
       kessentials.setwarp: true
       kessentials.spawn: true
       kessentials.spawner: true
+      kessentials.tps: true
+      kessentials.ungod: true
       kessentials.unmute: true
       kessentials.warp: true
       kessentials.warplist: true
@@ -165,6 +181,9 @@ permissions:
   kessentials.getid:
     description: /getid
     default: true
+  kessentials.god:
+    description: /god
+    default: op
   kessentials.hat:
     description: /hat
     default: op
@@ -196,11 +215,14 @@ permissions:
     description: /ram
     default: true
   kessentials.remove:
-    description: /remove <arrows|boats|items|minecarts> <radius>
+    description: /remove <all|arrows|boats|items|minecarts|paintings> <radius>
     default: op
   kessentials.repair:
     description: /repair
     default: op
+  kessentials.rules:
+    description: /rules
+    default: true
   kessentials.sethome:
     description: /sethome
     default: true
@@ -215,6 +237,12 @@ permissions:
     default: true
   kessentials.spawner:
     description: /spawner
+    default: op
+  kessentials.tps:
+    description: /tps
+    default: true
+  kessentials.ungod:
+    description: /ungod
     default: op
   kessentials.unmute:
     description: /unmute <player>

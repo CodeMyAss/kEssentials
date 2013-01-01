@@ -11,20 +11,20 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandMotd extends kCommand implements CommandExecutor {
-    public CommandMotd(kEssentials plugin) {
+public class CommandRules extends kCommand implements CommandExecutor {
+    public CommandRules(kEssentials plugin) {
         super(plugin);
     }
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("motd")) {
+        if (cmd.getName().equalsIgnoreCase("rules")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 if (args.length == 0) {
-                    if (player.hasPermission("kessentials.motd")) {
+                    if (player.hasPermission("kessentials.rules")) {
                         try {
-                            File file = new File(plugin.getDataFolder(), "motd.txt");
+                            File file = new File(plugin.getDataFolder(), "rules.txt");
                             Scanner s = new Scanner(file);
                             while (s.hasNextLine()) {
                                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', s.nextLine()));
@@ -37,12 +37,12 @@ public class CommandMotd extends kCommand implements CommandExecutor {
                         noPermissionsMessage(player);
                     }
                 } else {
-                    incorrectUsage(player, "/motd");
+                    incorrectUsage(player, "/rules");
                 }
             } else {
                 if (args.length == 0) {
                     try {
-                        File file = new File(plugin.getDataFolder(), "motd.txt");
+                        File file = new File(plugin.getDataFolder(), "rules.txt");
                         Scanner s = new Scanner(file);
                         while (s.hasNextLine()) {
                             log(Level.INFO, s.nextLine());
@@ -52,7 +52,7 @@ public class CommandMotd extends kCommand implements CommandExecutor {
                         e.printStackTrace();
                     }
                 } else {
-                    incorrectUsageC("/motd");
+                    incorrectUsageC("/rules");
                 }
             }
         }
