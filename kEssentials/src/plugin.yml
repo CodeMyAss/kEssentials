@@ -51,6 +51,15 @@ commands:
 #  kessentials:
 #    description: Various actions related to kEssentials
 #    aliases: [kes]
+  kick:
+    description: Kick a player from the server
+    aliases: []
+  kill:
+    description: Kill another player instantly
+    aliases: [murder, kmurder]
+  killall:
+    description: Kill everybody on the server
+    aliases: [massmurder, kmassmurder]
   me:
     description: Perform an action in the chat
     aliases: [action, kaction, kme]
@@ -150,6 +159,9 @@ permissions:
       kessentials.home: true
       kessentials.ignite.*: true
       kessentials.itemname: true
+      kessentials.kick: true
+      kessentials.kill: true
+      kessentials.killall: true
       kessentials.motd: true
       kessentials.mute: true
 #      kessentials.myhead: true
@@ -204,6 +216,15 @@ permissions:
     default: true
   kessentials.itemname:
     description: /itemname <name>
+    default: op
+  kessentials.kick:
+    description: /kick <player>
+    default: op
+  kessentials.kill:
+    description: /kill <player>
+    default: op
+  kessentials.killall:
+    description: /killall
     default: op
   kessentials.motd:
     description: /motd
