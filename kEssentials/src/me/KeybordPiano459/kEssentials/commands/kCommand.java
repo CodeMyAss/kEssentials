@@ -33,6 +33,7 @@ public class kCommand {
         getCommand("getid", new CommandGetid(plugin));
         getCommand("god", new CommandGod(plugin));
         getCommand("hat", new CommandHat(plugin));
+        getCommand("heal", new CommandHeal(plugin));
         getCommand("home", new CommandHome(plugin));
         getCommand("ignite", new CommandIgnite(plugin));
         getCommand("ip", new CommandIp(plugin));

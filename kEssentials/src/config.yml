@@ -7,6 +7,9 @@
 # Should players see the MOTD when they log in?
 motd-on-login: true
 
+# What should the cooldown be on /heal (in seconds)
+heal-cooldown: 60
+
 
 
 

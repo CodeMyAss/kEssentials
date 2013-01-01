@@ -39,6 +39,9 @@ commands:
   hat:
     description: Wear a block on your head
     aliases: [khat]
+  heal:
+    description: Heal yourself or another player
+    aliases: [kheal]
   home:
     description: Teleport to your home
     aliases: [khome]
@@ -162,6 +165,7 @@ permissions:
       kessentials.getid: true
       kessentials.god: true
       kessentials.hat: true
+      kessentials.heal.*: true
       kessentials.home: true
       kessentials.ignite: true
       kessentials.ip: true
@@ -343,3 +347,20 @@ permissions:
   kessentials.clearinventory.self:
     description: /clearinventory
     default: true
+
+  kessentials.heal.*:
+    description: All heal permissions
+    default: op
+    children:
+      kessentials.heal.bypass: true
+      kessentials.heal.others: true
+      kessentials.heal.self: true
+  kessentials.heal.bypass:
+    description: Bypass heal cooldown
+    default: op
+  kessentials.heal.others:
+    description: /heal <player>
+    default: op
+  kessentials.heal.self:
+    description: /heal
+    default: op

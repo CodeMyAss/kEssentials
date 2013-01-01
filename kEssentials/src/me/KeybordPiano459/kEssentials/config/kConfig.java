@@ -44,6 +44,8 @@ public class kConfig {
             w(w, "");
             w(w, "# Should players see the MOTD when they log in?");
             w(w, "motd-on-login: true\n");
+            w(w, "# What should the cooldown be on /heal (in seconds)");
+            w(w, "heal-cooldown: 60\n");
             w(w, "\n\n");
             w(w, "##################################################");
             w(w, "# +--------------------------------------------+ #");
