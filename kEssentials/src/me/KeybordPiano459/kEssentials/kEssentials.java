@@ -2,17 +2,11 @@ package me.KeybordPiano459.kEssentials;
 
 import java.io.File;
 import java.io.IOException;
-import me.KeybordPiano459.kEssentials.commands.kCommand;
-import me.KeybordPiano459.kEssentials.config.kConfig;
-import me.KeybordPiano459.kEssentials.helpers.God;
-import me.KeybordPiano459.kEssentials.helpers.MOTD;
-import me.KeybordPiano459.kEssentials.helpers.Mute;
-import me.KeybordPiano459.kEssentials.helpers.Spawn;
-import me.KeybordPiano459.kEssentials.helpers.Warps;
-import me.KeybordPiano459.kEssentials.helpers.kHelper;
-import me.KeybordPiano459.kEssentials.metrics.BukkitMetrics;
-import me.KeybordPiano459.kEssentials.metrics.MetricsGraph;
-import me.KeybordPiano459.kEssentials.players.kPlayerManager;
+import me.KeybordPiano459.kEssentials.commands.*;
+import me.KeybordPiano459.kEssentials.config.*;
+import me.KeybordPiano459.kEssentials.helpers.*;
+import me.KeybordPiano459.kEssentials.metrics.*;
+import me.KeybordPiano459.kEssentials.players.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class kEssentials extends JavaPlugin {
@@ -33,17 +27,20 @@ public class kEssentials extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("kEssentials v1.0 has been enabled!");
+        
+        //Create files
         folder.mkdirs();
         motd.createMOTD();
         warps.generateWarpsConfig();
         spawn.generateSpawnConfig();
-        playerManager = new kPlayerManager(this);
-        god = new God(this);
-        mute = new Mute(this);
         kconfig.createConfig();
+        
+        //Register events
+        registerInstances();
         khelper.getHelpers();
         kcommand.getCommands();
         
+        //Metrics
         try {
             BukkitMetrics metrics = new BukkitMetrics(this);
             MetricsGraph graph = new MetricsGraph();
@@ -57,6 +54,12 @@ public class kEssentials extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("kEssentials v1.0 has been disabled.");
+    }
+    
+    private void registerInstances() {
+        god = new God(this);
+        mute = new Mute(this);
+        playerManager = new kPlayerManager(this);
     }
     
     public kPlayerManager getPlayerManager() {
