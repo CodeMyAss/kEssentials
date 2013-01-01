@@ -1,6 +1,6 @@
 package me.KeybordPiano459.kEssentials.commands;
 
-import java.util.logging.Logger;
+import java.util.logging.Level;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -28,7 +28,7 @@ public class CommandPing extends kCommand implements CommandExecutor {
                 }
             } else {
                 if (args.length == 0) {
-                    Logger.getLogger("Minecraft").info("Pong");
+                    log(Level.INFO, "Pong");
                 } else {
                     incorrectUsageC("/ping");
                 }

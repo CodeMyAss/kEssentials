@@ -3,6 +3,7 @@ package me.KeybordPiano459.kEssentials.commands;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.ChatColor;
@@ -45,7 +46,7 @@ public class CommandMotd extends kCommand implements CommandExecutor {
                         File file = new File(plugin.getDataFolder(), "motd.txt");
                         Scanner s = new Scanner(file);
                         while (s.hasNextLine()) {
-                            Logger.getLogger("Minecraft").info(s.nextLine());
+                            log(Level.INFO, s.nextLine());
                         }
                         s.close();
                     } catch (FileNotFoundException e) {

@@ -46,9 +46,9 @@ public class CommandIgnite extends kCommand implements CommandExecutor {
                     if (player != null) {
                         player.setFireTicks(200);
                         player.sendMessage(DARK_GRAY + "You have been ignited!");
-                        Logger.getLogger("Minecraft").log(Level.INFO, "You have ignited {0}", player.getName());
+                        log(Level.INFO, "You have ignited " + player.getName());
                     } else {
-                        Logger.getLogger("Minecraft").log(Level.INFO, "{0} is offline.", args[0]);
+                        log(Level.INFO, args[0] + " is offline.");
                     }
                 } else {
                     incorrectUsageC("/ignite <player>");

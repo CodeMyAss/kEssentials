@@ -37,9 +37,9 @@ public class CommandOnline extends kCommand implements CommandExecutor {
                 if (args.length == 1) {
                     Player player = Bukkit.getServer().getPlayer(args[0]);
                     if (player != null) {
-                        Logger.getLogger("Minecraft").log(Level.INFO, "{0} is online!", player.getName());
+                        log(Level.INFO, player.getName() + " is online!");
                     } else {
-                        Logger.getLogger("Minecraft").log(Level.INFO, "{0} is offline.", args[0]);
+                        log(Level.INFO, args[0] + " is offline.");
                     }
                 } else {
                     incorrectUsageC("/online <player>");

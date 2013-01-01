@@ -48,7 +48,7 @@ public class CommandClearinventory extends kCommand implements CommandExecutor {
                         player.getInventory().clear();
                         player.sendMessage(DARK_GRAY + "Your inventory has been cleared.");
                     } else {
-                        Logger.getLogger("Minecraft").log(Level.INFO, "The player {0} isn''t online.", args[0]);
+                        log(Level.INFO, "The player " + args[0] + " isn't online.");
                     }
                 }
             }

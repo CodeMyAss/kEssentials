@@ -59,19 +59,23 @@ public class kCommand {
         Bukkit.getServer().getPluginCommand(command).setExecutor(executor);
     }
     
-    public static void consoleError() {
-        Logger.getLogger("Minecraft").info("This command can't be executed from the console!");
+    public void consoleError() {
+        log(Level.WARNING, "This command can't be executed from the console!");
     }
     
-    public static void incorrectUsage(Player player, String usage) {
+    public void incorrectUsage(Player player, String usage) {
         player.sendMessage(RED + "Incorrect usage! Type " + usage);
     }
     
-    public static void incorrectUsageC(String usage) {
-        Logger.getLogger("Minecraft").log(Level.INFO, "Incorrect usage! Type {0}", usage);
+    public void incorrectUsageC(String usage) {
+        log(Level.INFO, "Incorrect usage! Type " + usage);
     }
     
-    public static void noPermissionsMessage(Player player) {
+    public void noPermissionsMessage(Player player) {
         player.sendMessage(RED + "You don't have permission to do that!");
+    }
+    
+    public void log(Level level, String message) {
+        Logger.getLogger("Minecraft").log(level, message);
     }
 }

@@ -37,17 +37,16 @@ public class CommandGarbagecollector extends kCommand implements CommandExecutor
                     incorrectUsage(player, "/garbagecollector");
                 }
             } else {
-                Logger log = Logger.getLogger("Minecraft");
                 if (args.length == 0) {
                     if (gc.getMaxMemory() < 0L) {
-                        log.warning("You may be using CACAO Java. Please switch to another JVM.");
-                        log.warning("Some of these values may be negative.");
-                        log.info("");
+                        log(Level.WARNING, "You may be using CACAO Java. Please switch to another JVM.");
+                        log(Level.WARNING, "Some of these values may be negative.");
+                        log(Level.INFO, "");
                     }
-                    log.log(Level.INFO, "Used Memory Before: {0} MB", gc.getUsedMemoryBefore());
-                    log.log(Level.INFO, "Current Memory: {0} MB", gc.getCurrentMemory());
-                    log.log(Level.INFO, "Memory Freed: {0} MB", gc.getMemoryFreed());
-                    log.log(Level.INFO, "Processors Available: {0}", gc.getProcessors());
+                    log(Level.INFO, "Used Memory Before: " + gc.getUsedMemoryBefore() + "MB");
+                    log(Level.INFO, "Current Memory: " + gc.getCurrentMemory() + "MB");
+                    log(Level.INFO, "Memory Freed: " + gc.getMemoryFreed() + "MB");
+                    log(Level.INFO, "Processors Available: " + gc.getProcessors());
                 } else {
                     incorrectUsageC("/garbagecollector");
                 }

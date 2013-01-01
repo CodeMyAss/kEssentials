@@ -40,14 +40,13 @@ public class CommandDay extends kCommand implements CommandExecutor {
                     noPermissionsMessage(player);
                 }
             } else {
-                Logger log = Logger.getLogger("Minecraft");
                 if (args.length == 1) {
                     World world = Bukkit.getServer().getWorld(args[0]);
                     if (world != null) {
                         world.setTime(0);
-                        log.log(Level.INFO, "It is now daytime in the world {0}", world.getName());
+                        log(Level.INFO, "It is now daytime in the world " + world.getName());
                     } else {
-                        log.log(Level.INFO, "The world {0} is nonexistant.", args[0]);
+                        log(Level.INFO, "The world " + args[0] + " is nonexistant.");
                     }
                 } else {
                     incorrectUsageC("/day <world>");

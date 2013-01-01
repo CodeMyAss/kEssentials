@@ -46,7 +46,7 @@ public class CommandClearenderchest extends kCommand implements CommandExecutor 
                         player.getEnderChest().clear();
                         player.sendMessage(DARK_GRAY + "Your enderchest has been cleared.");
                     } else {
-                        Logger.getLogger("Minecraft").log(Level.INFO, "The player {0} isn''t online.", args[0]);
+                        log(Level.INFO, "The player " + args[0] + " isn't online.");
                     }
                 } else {
                     incorrectUsageC("/clearenderchest <player>");

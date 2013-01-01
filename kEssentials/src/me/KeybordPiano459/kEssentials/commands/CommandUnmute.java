@@ -41,7 +41,7 @@ public class CommandUnmute extends kCommand implements CommandExecutor {
                 if (args.length == 1) {
                     Player player = Bukkit.getServer().getPlayer(args[0]);
                     plugin.mute.setMute(player, true);
-                    Logger.getLogger("Minecraft").log(Level.INFO, "You have un-muted {0}", args[0]);
+                    log(Level.INFO, "You have un-muted " + args[0]);
                     if (player != null) {
                         player.sendMessage(DARK_GRAY + "You have been un-muted!");
                     }

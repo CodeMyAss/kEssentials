@@ -14,6 +14,8 @@ public class CommandRam extends kCommand implements CommandExecutor {
         super(plugin);
     }
     
+    private RAM ram;
+    
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase("ram")) {
@@ -21,9 +23,9 @@ public class CommandRam extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.ram")) {
-                        player.sendMessage(GREEN + "Free RAM: " + RAM.getFreeRAM() + " MB");
-                        player.sendMessage(GREEN + "Max RAM: " + RAM.getMaxRAM() + " MB");
-                        player.sendMessage(GREEN + "Used RAM: " + RAM.getUsedRAM() + " MB");
+                        player.sendMessage(GREEN + "Free RAM: " + ram.getFreeRAM() + "MB");
+                        player.sendMessage(GREEN + "Max RAM: " + ram.getMaxRAM() + "MB");
+                        player.sendMessage(GREEN + "Used RAM: " + ram.getUsedRAM() + "MB");
                     } else {
                         noPermissionsMessage(player);
                     }
@@ -32,10 +34,9 @@ public class CommandRam extends kCommand implements CommandExecutor {
                 }
             } else {
                 if (args.length == 0) {
-                    Logger log = Logger.getLogger("Minecraft");
-                    log.log(Level.INFO, "Free RAM: {0} MB", RAM.getFreeRAM());
-                    log.log(Level.INFO, "Max RAM: {0} MB", RAM.getMaxRAM());
-                    log.log(Level.INFO, "Used RAM: {0} MB", RAM.getUsedRAM());
+                    log(Level.INFO, "Free RAM: " + ram.getFreeRAM() + "MB");
+                    log(Level.INFO, "Max RAM: " + ram.getMaxRAM() + "MB");
+                    log(Level.INFO, "Used RAM: " + ram.getUsedRAM() + "MB");
                 } else {
                     incorrectUsageC("/ram");
                 }
