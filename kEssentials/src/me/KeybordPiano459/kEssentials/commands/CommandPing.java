@@ -19,7 +19,9 @@ public class CommandPing extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.ping")) {
-                        player.sendMessage(GREEN + "Pong");
+                        CraftPlayer cp = (CraftPlayer) player;
+                        int ping = cp.getHandle().ping;
+                        player.sendMessage(GREEN + "Pong" + ping + "MS");
                     } else {
                         noPermissionsMessage(player);
                     }
