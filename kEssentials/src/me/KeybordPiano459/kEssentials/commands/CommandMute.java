@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CommandMute extends kCommand implements CommandExecutor {
-    public CommandMute(kEssentials plugin) {
+    public CommandMute(kEssentials plugin){
         super(plugin);
     }
 

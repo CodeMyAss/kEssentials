@@ -19,9 +19,13 @@ public class CommandItemname extends kCommand implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("itemname")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                if (args.length == 1) {
+                if (args.length > 0) {
                     if (player.hasPermission("kessentials.itemname")) {
-                        String name = args[0];
+                        StringBuilder nameSB = new StringBuilder(args[0]);
+                        for(int i = 1; i < args.length; i++){
+                            nameSB.append(args[i]);
+                        }
+                        String name = nameSB.toString();
                         if (player.getItemInHand().getType() != Material.AIR) {
                             ItemStack item = player.getItemInHand();
                             ItemMeta meta = item.getItemMeta();

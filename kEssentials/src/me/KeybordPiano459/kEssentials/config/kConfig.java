@@ -114,7 +114,7 @@ public class kConfig {
         try {
             kConfigConfiguration.save(kConfigFile);
         } catch (IOException e) {
-            Logger.getLogger("Minecraft").severe("Could not save the config file to the disk!");
+            plugin.getLogger().severe("Could not save the config file to the disk!");
         }
     }
 }

@@ -16,8 +16,6 @@ public class CommandWarp extends kCommand implements CommandExecutor {
         super(plugin);
     }
     
-    private Warps warps = new Warps(plugin);
-
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase("warp")) {
@@ -25,9 +23,9 @@ public class CommandWarp extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 1) {
                     if (player.hasPermission("kessentials.warp")) {
-                        if (warps.getWarpsConfig().getString("warps." + args[0] + ".world") != null) {
+                        if (plugin.getWarps().getWarpsConfig().getString("warps." + args[0] + ".world") != null) {
                             String name = args[0];
-                            FileConfiguration wconfig = warps.getWarpsConfig();
+                            FileConfiguration wconfig = plugin.getWarps().getWarpsConfig();
                             int x = wconfig.getInt("warps." + name + ".x");
                             int y = wconfig.getInt("warps." + name + ".y");
                             int z = wconfig.getInt("warps." + name + ".z");

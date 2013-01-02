@@ -2,6 +2,7 @@ package me.KeybordPiano459.kEssentials.commands;
 
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,6 +18,10 @@ public class CommandMe extends kCommand implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("me")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
+                if(plugin.mute.getMute(player)){
+                    player.sendMessage(ChatColor.RED + "You are muted!");
+                    return true;
+                }
                 if (args.length == 0) {
                     incorrectUsage(player, "/me <message>");
                 } else {

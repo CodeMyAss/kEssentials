@@ -53,7 +53,7 @@ public class Spawn extends kHelper {
         try {
             spawnConfig.save(spawnConfigFile);
         } catch (IOException e) {
-            Logger.getLogger("Minecraft").log(Level.SEVERE, "Could not save the warps config to the disk!");
+            plugin.getLogger().log(Level.SEVERE, "Could not save the warps config to the disk!");
         }
     }
 }

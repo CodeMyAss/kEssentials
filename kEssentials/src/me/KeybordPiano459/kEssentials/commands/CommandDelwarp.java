@@ -15,7 +15,6 @@ public class CommandDelwarp extends kCommand implements CommandExecutor {
         super(plugin);
     }
     
-    private Warps warps = new Warps(plugin);
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -24,11 +23,11 @@ public class CommandDelwarp extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 1) {
                     if (player.hasPermission("kessentials.delwarp")) {
-                        ConfigurationSection warp = warps.getWarpsConfig().getConfigurationSection("warps." + args[0]);
+                        ConfigurationSection warp = plugin.getWarps().getWarpsConfig().getConfigurationSection("warps." + args[0]);
                         if (warp != null) {
-                            FileConfiguration wconfig = warps.getWarpsConfig();
+                            FileConfiguration wconfig = plugin.getWarps().getWarpsConfig();
                             wconfig.set("warps." + args[0], null);
-                            warps.saveWarpsConfig();
+                            plugin.getWarps().saveWarpsConfig();
                             player.sendMessage(GREEN + "You have sucessfully deleted a warp!");
                         } else {
                             player.sendMessage(RED + "That warp doesn't exist!");

@@ -14,7 +14,6 @@ public class CommandSetwarp extends kCommand implements CommandExecutor {
         super(plugin);
     }
     
-    private Warps warps = new Warps(plugin);
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -31,15 +30,15 @@ public class CommandSetwarp extends kCommand implements CommandExecutor {
                         int z = loc.getBlockZ();
                         float yaw = loc.getYaw();
                         float pitch = loc.getPitch();
-                        FileConfiguration wconfig = warps.getWarpsConfig();
+                        FileConfiguration wconfig = plugin.getWarps().getWarpsConfig();
                         wconfig.set("warps." + name + ".x", x);
                         wconfig.set("warps." + name + ".y", y);
                         wconfig.set("warps." + name + ".z", z);
                         wconfig.set("warps." + name + ".yaw", yaw);
                         wconfig.set("warps." + name + ".pitch", pitch);
                         wconfig.set("warps." + name + ".world", world);
-                        warps.saveWarpsConfig();
-                        warps.reloadWarpsConfig();
+                        plugin.getWarps().saveWarpsConfig();
+                        plugin.getWarps().reloadWarpsConfig();
                         player.sendMessage(GREEN + "You have sucessfully set a warp!");
                     } else {
                         noPermissionsMessage(player);

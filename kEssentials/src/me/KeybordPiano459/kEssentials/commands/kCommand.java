@@ -9,9 +9,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.entity.Player;
 
 public class kCommand {
-    static kEssentials plugin;
+    kEssentials plugin;
     public kCommand(kEssentials plugin) {
-        kCommand.plugin = plugin;
+        this.plugin = plugin;
     }
     
     public static ChatColor DARK_GRAY = ChatColor.DARK_GRAY;
@@ -88,6 +88,6 @@ public class kCommand {
     }
     
     public void log(Level level, String message) {
-        Logger.getLogger("Minecraft").log(level, message);
+        plugin.getLogger().log(level, message);
     }
 }

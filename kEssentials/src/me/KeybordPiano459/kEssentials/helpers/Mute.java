@@ -20,7 +20,7 @@ public class Mute implements Listener {
         Player player = event.getPlayer();
         if (getMute(player)) {
             event.setCancelled(true);
-            player.sendMessage(ChatColor.RED + "You are mute!");
+            player.sendMessage(ChatColor.RED + "You are muted!");
         }
     }
 
@@ -32,7 +32,8 @@ public class Mute implements Listener {
         }
     }
 
-    public boolean getMute(Player player) {
+    // Not sure if this makes it thread safe (probably not)
+    public synchronized boolean getMute(Player player) {
         kPlayer kplayer = plugin.getPlayerManager().getPlayer(player.getName());
         return kplayer.getPlayerConfig().getConfig().getBoolean("muted");
     }

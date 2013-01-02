@@ -8,12 +8,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CommandWarplist extends kCommand implements CommandExecutor {
-    public CommandWarplist(kEssentials plugin) {
+    public CommandWarplist(kEssentials plugin) 
+    {
         super(plugin);
     }
     
-    private Warps warps = new Warps(plugin);
-
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase("warplist")) {
@@ -21,10 +20,10 @@ public class CommandWarplist extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.warplist")) {
-                        if (warps.getWarpsConfig().getConfigurationSection("warps.") != null) {
+                        if (plugin.getWarps().getWarpsConfig().getConfigurationSection("warps.") != null) {
                             int amount = 0;
                             player.sendMessage("----- [" + GREEN + "Warps" + RESET + "] -----");
-                            for (String warp : warps.getWarpsConfig().getConfigurationSection("warps.").getKeys(false)) {
+                            for (String warp : plugin.getWarps().getWarpsConfig().getConfigurationSection("warps.").getKeys(false)) {
                                 amount++;
                                 player.sendMessage(amount + ". " + GREEN + warp);
                                 if (amount == 0) {
