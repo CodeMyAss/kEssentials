@@ -1,5 +1,3 @@
-kEssentials README
-==================
 ![kEssentials](http://keybordpiano459.com/images/banners/kessentials.png)
 
 kEssentials is a very lightweight and easy to use server management plugin.
