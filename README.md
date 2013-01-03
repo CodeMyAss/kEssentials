@@ -4,6 +4,7 @@ kEssentials is a very lightweight and easy to use server management plugin.
 
 * ![Download](http://cdn2.iconfinder.com/data/icons/crystalproject/16x16/apps/ark.png)[ Download Released Builds](http://dev.bukkit.org/server-mods/kessentials/files/)
 * ![Bug Tracker](http://cdn2.iconfinder.com/data/icons/kids/16x16/apps/agt_update_critical.png)[ Report Bugs/Suggest Features](http://dev.bukkit.org/server-mods/kessentials/tickets/)
+* ![Commands](http://cdn2.iconfinder.com/data/icons/oxygen/16x16/mimetypes/text-x-script.png)[ List of Commands](http://dev.bukkit.org/server-mods/kessentials/pages/commands/)
 * ![Github](http://cdn1.iconfinder.com/data/icons/Keyamoon-IcoMoon--limited/16/github-cat.png)[ Github Page](https://github.com/keybordpiano459/kEssentials/)
 * ![IRC Chat](http://cdn1.iconfinder.com/data/icons/nuvola2/16x16/apps/edu_languages.png)[ IRC Chatroom (#kessentials)](http://webchat.esper.net/?nick=&channels=kEssentials)
 * ![Plugin Stats](http://cdn3.iconfinder.com/data/icons/woothemesiconset/16/chart.png)[ Plugin Statistics](https://mcstats.org/plugin/kEssentials/)
