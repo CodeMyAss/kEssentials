@@ -21,22 +21,16 @@ public class CommandPing extends kCommand implements CommandExecutor {
         int end = bv.indexOf(")", index);
         String version = bv.substring(index, end);
         plugin.getLogger().info(new StringBuilder("Version found: ").append(version).toString()); 
-        try
-        {
+        try {
             String[] vs = version.split(".");
-            if(Integer.parseInt(vs[0]) >= 1)
-            {
-                if(Integer.parseInt(vs[1]) >= 4)
-                {
-                    if(Integer.parseInt(vs[2]) >= 5)
-                    {
+            if(Integer.parseInt(vs[0]) >= 1) {
+                if(Integer.parseInt(vs[1]) >= 4) {
+                    if(Integer.parseInt(vs[2]) >= 5) {
                         packageV = new StringBuilder(".v").append(version.replace(".", "_")).toString();
                     }
                 }
             }
-        }
-        catch(Exception ex)
-        {
+        } catch(Exception ex) {
             //plugin.getLogger().info("Version lower than 1.4.5 found");
         }
         
@@ -49,8 +43,7 @@ public class CommandPing extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.ping")) {
-                        try
-                        {
+                        try {
                             Object nmsPlayer = Class.forName("org.bukkit.craftbukkit"+packageV+".entity.CraftPlayer")
                                                 .getMethod("getHandle", new Class[0])
                                                 .invoke(player, new Object[0]);
@@ -58,9 +51,7 @@ public class CommandPing extends kCommand implements CommandExecutor {
                             con.setAccessible(true);
                             int ping = (int)con.get(nmsPlayer);
                             player.sendMessage(GREEN + "Pong " + ping + " MS");
-                        }
-                        catch(Exception ex)
-                        {
+                        } catch(Exception ex) {
                             player.sendMessage(RED + "Failed to collect ping data");
                         }
                         
