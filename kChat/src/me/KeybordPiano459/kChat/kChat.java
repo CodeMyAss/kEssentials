@@ -11,7 +11,6 @@ public class kChat extends JavaPlugin {
     public String opcolor = plugin.getConfig().getString("op-name-color");
     public boolean colorallowed = plugin.getConfig().getBoolean("colors-allowed-chat");
     public int chatradius = plugin.getConfig().getInt("chat-radius");
-    public boolean usechatspam = plugin.getConfig().getBoolean("use-spam-blocker");
     
     @Override
     public void onEnable() {
@@ -38,9 +37,6 @@ public class kChat extends JavaPlugin {
     private void registerEvents() {
         registerEvent(new ChatColors(this));
         registerEvent(new ChatRadius(this));
-        if (usechatspam) {
-            registerEvent(new ChatSpam(this));
-        }
     }
     
     private void registerEvent(Listener listener) {
