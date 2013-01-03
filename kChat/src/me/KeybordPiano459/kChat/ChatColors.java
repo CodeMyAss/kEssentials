@@ -18,9 +18,9 @@ public class ChatColors implements Listener {
         String msg = event.getMessage();
         if (plugin.colorallowed) {
             event.setMessage(ChatColor.translateAlternateColorCodes('&', msg));
-        } // Add color symbols to chat messages
+        }
         if (player.isOp() && !plugin.opcolor.equals("none")) {
-            event.setFormat(ChatColor.translateAlternateColorCodes('&', "<" + player.getName() + "> " + msg));
+            event.setFormat(ChatColor.translateAlternateColorCodes('&', "<" + plugin.opcolor + player.getName() + ChatColor.RESET + "> " + msg));
         }
     }
 }
