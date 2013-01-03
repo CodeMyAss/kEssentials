@@ -1,30 +1,31 @@
 package me.KeybordPiano459.kChat;
 
-import me.KeybordPiano459.kEssentials.config.kConfig;
+import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class kChat extends JavaPlugin {
     
-    private kConfig kconfig;
-    public String opcolor = kconfig.getConfig().getString("op-name-color");
-    public boolean colorallowed = kconfig.getConfig().getBoolean("colors-allowed-chat");
-    public int chatradius = kconfig.getConfig().getInt("chat-radius");
-    public boolean usechatspam = kconfig.getConfig().getBoolean("use-spam-blocker");
+    Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("kEssentials");
+    public String opcolor = plugin.getConfig().getString("op-name-color");
+    public boolean colorallowed = plugin.getConfig().getBoolean("colors-allowed-chat");
+    public int chatradius = plugin.getConfig().getInt("chat-radius");
+    public boolean usechatspam = plugin.getConfig().getBoolean("use-spam-blocker");
     
     @Override
     public void onEnable() {
         if (kEssentials()) {
             getLogger().info("kChat v1.0 has been enabled!");
-            
+            registerEvents();
         } else {
-            getLogger().warning("|----------------------------------------------|");
+            getLogger().warning("+----------------------------------------------+");
             getLogger().warning("|         Could not load kChat v1.0!!!         |");
             getLogger().warning("|      kChat is an add-on for kEssentials.     |");
             getLogger().warning("|      It can't load without it. Download      |");
             getLogger().warning("|     the newest version of kEssentials at     |");
             getLogger().warning(" http://dev.bukkit.org/server-mods/kEssentials/ ");
-            getLogger().warning("|----------------------------------------------|");
+            getLogger().warning("+----------------------------------------------+");
             this.setEnabled(false);
         }
     }
