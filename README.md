@@ -15,3 +15,5 @@ kEssentials is a very lightweight and easy to use server management plugin.
 kEssentials is currently a collaborative effort, the lead developers being me, and @fireblast709. kEssentials is a pretty lightweight plugin which currently is in development, and will be released as soon as we have enough time to finish it up. With what we have so far, you could easily manage a moderately-sized server with this plugin alone.
 
 Installing the plugin itself is easy. Just drag the .jar file that you downloaded into your server's plugins folder, and do the same with any addons. Once it's installed, you can start up the server, and use all of the features as you would with any other plugin.
+
+[ignore] random commit, Git is derping a bit
