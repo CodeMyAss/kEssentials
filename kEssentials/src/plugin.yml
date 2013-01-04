@@ -24,6 +24,9 @@ commands:
   delwarp:
     description: Delete an already set warp
     aliases: [deletewarp, kdeletewarp, kdelwarp]
+  disappear:
+    description: Make yourself invisible
+    aliases: [invisible, kdisappear, kinvisible]
   enderchest:
     description: View someone's enderchest
     aliases: [viewender, seeender, kenderchest, kseeender, kviewender]
@@ -54,9 +57,6 @@ commands:
   itemname:
     description: Name the item in your hand
     aliases: [nameitem, kitemname, knameitem]
-#  kessentials:
-#    description: Various actions related to kEssentials
-#    aliases: [kes]
   kick:
     description: Kick a player from the server
     aliases: []
@@ -78,9 +78,6 @@ commands:
   mute:
     description: Make it so that someone can't chat
     aliases: [silence, kmute, ksilence]
-#  myhead:
-#    description: Get your very own head
-#    aliases: [head, khead, kmyhead]
   night:
     description: Make it nighttime in your world
     aliases: [nighttime, knight, knighttime]
@@ -96,6 +93,9 @@ commands:
   ram:
     description: See the server's RAM usage
     aliases: [speed, kram, kspeed]
+  reappear:
+    description: Reveal yourself if invisible
+    aliases: [kreappear]
   remove:
     description: Remove nearby entities
     aliases: [kremove]
@@ -141,9 +141,6 @@ commands:
   workbench:
     description: Open up a crafting table
     aliases: [craft, kcraft, kworkbench]
-#  worldtime:
-#    description: See the time on the server computer
-#    aliases: [kworldtime]
 
 permissions:
   kessentials.*:
@@ -172,12 +169,12 @@ permissions:
       kessentials.killall: true
       kessentials.motd: true
       kessentials.mute: true
-#      kessentials.myhead: true
       kessentials.night: true
       kessentials.online: true
       kessentials.ping: true
       kessentials.rain: true
       kessentials.ram: true
+      kessentials.reappear: true
       kessentials.remove: true
       kessentials.repair: true
       kessentials.rules: true
@@ -193,7 +190,6 @@ permissions:
       kessentials.warp: true
       kessentials.warplist: true
       kessentials.workbench: true
-#      kessentials.worldtime: true
   kessentials.back:
     description: /back
     default: op

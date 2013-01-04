@@ -10,8 +10,9 @@ public class MetricsGraph {
     
     public void addAddonsGraph(BukkitMetrics metrics) {
         Graph graph = metrics.createGraph("Addons Used");
-        addPlotter(graph, "kEconomy");
         addPlotter(graph, "kChat");
+        addPlotter(graph, "kEconomy");
+        addPlotter(graph, "kProtection");
     }
     
     private void addPlotter(Graph graph, final String name) {

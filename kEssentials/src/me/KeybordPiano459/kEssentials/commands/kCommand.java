@@ -1,7 +1,6 @@
 package me.KeybordPiano459.kEssentials.commands;
 
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -28,6 +27,7 @@ public class kCommand {
         getCommand("clearinventory", new CommandClearinventory(plugin));
         getCommand("day", new CommandDay(plugin));
         getCommand("delwarp", new CommandDelwarp(plugin));
+        getCommand("disappear", new CommandDisappear(plugin));
         getCommand("enderchest", new CommandEnderchest(plugin));
         getCommand("garbagecollector", new CommandGarbagecollector(plugin));
         getCommand("getid", new CommandGetid(plugin));
@@ -50,6 +50,7 @@ public class kCommand {
         getCommand("ping", new CommandPing(plugin));
         getCommand("rain", new CommandRain(plugin));
         getCommand("ram", new CommandRam(plugin));
+        getCommand("reappear", new CommandReappear(plugin));
         getCommand("remove", new CommandRemove(plugin));
         getCommand("repair", new CommandRepair(plugin));
         getCommand("rules", new CommandRules(plugin));

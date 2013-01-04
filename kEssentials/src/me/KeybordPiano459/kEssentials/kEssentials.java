@@ -29,17 +29,17 @@ public class kEssentials extends JavaPlugin {
     public void onEnable() {
         getLogger().info("kEssentials v1.0 has been enabled!");
         
+        //Register events
+        registerInstances();
+        khelper.getHelpers();
+        kcommand.getCommands();
+        
         //Create files
         folder.mkdirs();
         motd.createMOTD();
         warps.generateWarpsConfig();
         spawn.generateSpawnConfig();
         kconfig.createConfig();
-        
-        //Register events
-        registerInstances();
-        khelper.getHelpers();
-        kcommand.getCommands();
         
         //Metrics
         try {

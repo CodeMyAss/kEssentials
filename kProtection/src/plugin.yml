@@ -1,0 +1,24 @@
+name: kProtection
+main: me.KeybordPiano459.kProtection.kProtection
+version: 1.0
+depend: [kEssentials]
+
+permissions:
+  kprotection.*:
+    description: All kProtection perms
+    default: op
+    children:
+      kprotection.bypass.*: true
+  
+  kprotection.bypass.*:
+    description: Bypass all perms
+    default: op
+    children:
+      kprotection.bypass.break: true
+      kprotection.bypass.place: true
+  kprotection.bypass.break:
+    description: Bypass break blacklist
+    default: op
+  kprotection.bypass.place:
+    description: Bypass place blacklist
+    default: op
