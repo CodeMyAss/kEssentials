@@ -29,6 +29,7 @@ public class kCommand {
         getCommand("delwarp", new CommandDelwarp(plugin));
         getCommand("disappear", new CommandDisappear(plugin));
         getCommand("enderchest", new CommandEnderchest(plugin));
+        getCommand("fly", new CommandFly(plugin));
         getCommand("garbagecollector", new CommandGarbagecollector(plugin));
         getCommand("getid", new CommandGetid(plugin));
         getCommand("god", new CommandGod(plugin));

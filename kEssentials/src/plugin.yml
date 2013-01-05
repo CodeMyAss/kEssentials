@@ -6,141 +6,191 @@ commands:
   back:
     description: Teleport to your last location
     aliases: [kback]
+    permission: kessentials.back
   backpack:
     description: Open a personal backpack
     aliases: [kbackpack]
+    permission: kessentials.backpack
   butcher:
     description: Kill all nearby mobs
     aliases: [kbutcher]
+    permission: kessentials.butcher
   clearenderchest:
     description: Clear your entire ender chest
     aliases: [ce, kce, kclearenderchest]
+    permission: kessentials.clearenderchest.self
   clearinventory:
     description: Clear your entire inventory
     aliases: [ci, kci, kclearinventory]
+    permission: kessentials.clearinventory.self
   day:
     description: Make it daytime in your world
     aliases: [daytime, kday, kdaytime]
+    permission: kessentials.day
   delwarp:
     description: Delete an already set warp
     aliases: [deletewarp, kdeletewarp, kdelwarp]
+    permission: kessentials.delwarp
   disappear:
     description: Make yourself invisible
     aliases: [invisible, kdisappear, kinvisible]
+    permission: kessentials.disappear
   enderchest:
     description: View someone's enderchest
     aliases: [viewender, seeender, kenderchest, kseeender, kviewender]
+    permission: kessentials.enderchest
+  fly:
+    description: Toggle flymode on/off
+    aliases: [kfly]
+    permission: kessentials.fly
   garbagecollector:
     description: Run the Java garbage collector
     aliases: [gc, kgarbagecollector, kgc]
+    permission: kessentials.garbagecollector
   getid:
     description: Get the ID of what you're holding
     aliases: [handid, kgetid, khandid]
+    permission: kessentials.getid
   god:
     description: Toggle godmode on and off
     aliases: [invincible, kgod, kinvincible]
+    permission: kessentials.god
   hat:
     description: Wear a block on your head
     aliases: [khat]
+    permission: kessentials.hat
   heal:
     description: Heal yourself or another player
     aliases: [kheal]
+    permission: kessentials.heal.self
   home:
     description: Teleport to your home
     aliases: [khome]
+    permission: kessentials.home
   ignite:
     description: Set someone on fire
     aliases: [burn, kburn, kignite]
+    permission: kessentials.ignite
   ip:
     description: View another player's IP
     aliases: [kip]
+    permission: kessentials.ip
   itemname:
     description: Name the item in your hand
     aliases: [nameitem, kitemname, knameitem]
+    permission: kessentials.itemname
   kick:
     description: Kick a player from the server
     aliases: []
+    permission: kessentials.kick
   kickall:
     description: Kick everybody on the server
     aliases: [masskick, kmasskick]
+    permission: kessentials.kickall
   kill:
     description: Kill another player instantly
     aliases: [murder, kmurder]
+    permission: kessentials.kill
   killall:
     description: Kill everybody on the server
     aliases: [massmurder, kmassmurder]
+    permission: kessentials.killall
   me:
     description: Perform an action in the chat
     aliases: [action, kaction, kme]
+    permission: kessentials.me
   motd:
     description: See the message of the day
     aliases: [kmotd]
+    permission: kessentials.motd
   mute:
     description: Make it so that someone can't chat
     aliases: [silence, kmute, ksilence]
+    permission: kessentials.mute
   night:
     description: Make it nighttime in your world
     aliases: [nighttime, knight, knighttime]
+    permission: kessentials.night
   online:
     description: Check if a player is online
     aliases: [offline, koffline, konline]
+    permission: kessentials.online
   ping:
     description: Useful to check if you're lagging
     aliases: [pong, kping, kpong]
+    permission: kessentials.ping
   rain:
     description: Turn on a storm in your world
     aliases: [storm, kstorm, krain]
+    permission: kessentials.rain
   ram:
     description: See the server's RAM usage
     aliases: [speed, kram, kspeed]
+    permission: kessentials.ram
   reappear:
     description: Reveal yourself if invisible
     aliases: [kreappear]
+    permission: kessentials.reappear
   remove:
     description: Remove nearby entities
     aliases: [kremove]
+    permission: kessentials.remove
   repair:
     description: Repair the item in your hand
     aliases: [krepair]
+    permission: kessentials.repair
   rules:
     description: View the server rules
     aliases: [krules]
+    permission: kessentials.rules
   sethome:
     description: Set your home
     aliases: [ksethome]
+    permission: kessentials.sethome
   setspawn:
     description: Set the server spawn
     aliases: [ksetspawn]
+    permission: kessentials.setspawn
   setwarp:
     description: Set a warp location
     aliases: [ksetwarp]
+    permission: kessentials.setwarp
   spawn:
     description: Teleport to the server spawn
     aliases: [kspawn]
+    permission: kessentials.spawn
   spawner:
     description: Change a spawner's mob type
     aliases: [kspawner]
+    permission: kessentials.spawner
   suicide:
     description: Take a guess...
     aliases: [ksuicide]
+    permission: kessentials.suicide
   sun:
     description: Turn the weather off in your world
     aliases: [ksun]
+    permission: kessentials.sun
   tps:
     description: Check the server's TPS rate
     aliases: [ktps]
+    permission: kessentials.tps
   unmute:
     description: Un-mute a person
     aliases: [unsilence, kunmute, kunsilence]
+    permission: kessentials.unmute
   warp:
     description: Warp to a set location
     aliases: [kwarp]
+    permission: kessentials.warp
   warplist:
     description: List all set warps
     aliases: [wl, kwarplist, kwl]
+    permission: kessentials.warplist
   workbench:
     description: Open up a crafting table
     aliases: [craft, kcraft, kworkbench]
+    permission: kessentials.workbench
 
 permissions:
   kessentials.*:
@@ -155,6 +205,7 @@ permissions:
       kessentials.day: true
       kessentials.delwarp: true
       kessentials.enderchest: true
+      kessentials.fly: true
       kessentials.garbagecollector: true
       kessentials.getid: true
       kessentials.god: true
@@ -204,6 +255,9 @@ permissions:
     default: op
   kessentials.enderchest:
     description: /enderchest <player>
+    default: op
+  kessentials.fly:
+    description: /fly
     default: op
   kessentials.garbagecollector:
     description: /garbagecollector
