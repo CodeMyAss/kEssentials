@@ -19,6 +19,7 @@ public class kHelper {
         getHelper(new Heal(plugin));
         getHelper(new MOTD(plugin));
         getHelper(new Mute(plugin));
+        getHelper(new ServerListMOTD(plugin));
         getHelper(plugin.getTPS());
         
         getHelper(new PlayerListener(plugin));

@@ -45,6 +45,9 @@ public class kConfig {
             w(w, "motd-on-login: true\n");
             w(w, "# What should the cooldown be on /heal (in seconds)");
             w(w, "heal-cooldown: 60\n");
+            w(w, "# What do you want the server's MOTD to be (include color codes!)");
+            w(w, "# Type 'none' to set to the MOTD in the server.properties file");
+            w(w, "server-motd: none");
             w(w, "\n\n");
             w(w, "##################################################");
             w(w, "# +--------------------------------------------+ #");

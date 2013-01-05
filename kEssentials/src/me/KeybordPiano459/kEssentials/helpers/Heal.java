@@ -14,6 +14,7 @@ public class Heal implements Listener {
     
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        CommandHeal.healcooldown.put(event.getPlayer().getName(), 0);
+        CommandHeal chl = new CommandHeal(plugin);
+        chl.healcooldown.put(event.getPlayer().getName(), (long) 0);
     }
 }

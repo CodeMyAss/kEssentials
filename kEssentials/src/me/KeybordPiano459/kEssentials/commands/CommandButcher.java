@@ -5,7 +5,6 @@ import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Animals;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
@@ -25,7 +24,7 @@ public class CommandButcher extends kCommand implements CommandExecutor {
                         int amount = 0;
                         List<Entity> entitylist = player.getNearbyEntities((double)100, (double)100, (double)100);
                         for (Entity entity : entitylist) {
-                            if (entity instanceof Monster || entity instanceof Animals) {
+                            if (entity instanceof Monster) {
                                 amount++;
                                 entity.remove();
                             }

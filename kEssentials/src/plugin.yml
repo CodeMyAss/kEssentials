@@ -1,6 +1,6 @@
 name: kEssentials
 main: me.KeybordPiano459.kEssentials.kEssentials
-version: 1.0
+version: 0.1a
 
 commands:
   back:

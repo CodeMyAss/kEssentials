@@ -28,7 +28,7 @@ public class kEssentials extends JavaPlugin {
     
     @Override
     public void onEnable() {
-        getLogger().info("kEssentials v1.0 has been enabled!");
+        getLogger().info("kEssentials v0.1a has been enabled!");
         
         //Register events
         registerInstances();
@@ -55,7 +55,7 @@ public class kEssentials extends JavaPlugin {
     
     @Override
     public void onDisable() {
-        getLogger().info("kEssentials v1.0 has been disabled.");
+        getLogger().info("kEssentials v0.1a has been disabled.");
     }
     
     private void registerInstances() {

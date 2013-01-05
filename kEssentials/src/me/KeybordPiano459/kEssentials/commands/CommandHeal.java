@@ -1,5 +1,5 @@
 package me.KeybordPiano459.kEssentials.commands;
-
+ 
 import java.util.HashMap;
 import java.util.logging.Level;
 import me.KeybordPiano459.kEssentials.kEssentials;
@@ -8,13 +8,13 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
+ 
 public class CommandHeal extends kCommand implements CommandExecutor {
     public CommandHeal(kEssentials plugin) {
         super(plugin);
     }
     
-    public static HashMap<String, Integer> healcooldown = new HashMap<String, Integer>();
+    public HashMap<String, Long> healcooldown = new HashMap<String, Long>();
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -23,20 +23,14 @@ public class CommandHeal extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.heal.self")) {
-                        if (healcooldown.get(player.getName()) == 0) {
+                        long cooldown = healcooldown.containsKey(player.getName()) ? healcooldown.get(player.getName()) : 0;
+                        if (cooldown < System.currentTimeMillis() || player.hasPermission("kessentials.heal.bypass")) {
                             player.setHealth(20);
                             player.setFireTicks(0);
                             player.sendMessage(GREEN + "You have healed yourself.");
-                            healcooldown.put(player.getName(), plugin.getkConfig().getConfig().getInt("heal-cooldown"));
-                            resetCooldownHeal(player);
+                            healcooldown.put(player.getName(), System.currentTimeMillis()+plugin.getkConfig().getConfig().getLong("heal-cooldown"));
                         } else {
-                            if (player.hasPermission("kessentials.heal.bypass")) {
-                                player.setHealth(20);
-                                player.setFireTicks(0);
-                                player.sendMessage(GREEN + "You have healed yourself.");
-                            } else {
-                                player.sendMessage(RED + "You still need to wait " + healcooldown.get(player.getName()) + " seconds before you can use /heal again.");
-                            }
+                                player.sendMessage(RED + "You still need to wait " + ((healcooldown.get(player.getName()) -  System.currentTimeMillis())/1000)+ " seconds before you can use /heal again.");
                         }
                     } else {
                         noPermissionsMessage(player);
@@ -45,13 +39,14 @@ public class CommandHeal extends kCommand implements CommandExecutor {
                     if (player.hasPermission("kessentials.heal.others")) {
                         Player tplayer = Bukkit.getServer().getPlayer(args[0]);
                         if (tplayer != null) {
-                            if (healcooldown.get(player.getName()) == 0) {
+                            long cooldown = healcooldown.containsKey(player.getName()) ? healcooldown.get(player.getName()) : 0;
+                            if (cooldown < System.currentTimeMillis() || player.hasPermission("kessentials.heal.bypass")) {
                                 tplayer.setHealth(20);
                                 tplayer.setFireTicks(0);
                                 tplayer.sendMessage(DARK_GRAY + "You have been healed.");
                                 player.sendMessage(GREEN + "You have healed " + tplayer.getName());
                             } else {
-                                player.sendMessage(RED + "You still need to wait " + healcooldown.get(player.getName()) + " seconds before you can use /heal again.");
+                                player.sendMessage(RED + "You still need to wait " + ((healcooldown.get(player.getName()) -  System.currentTimeMillis())/1000)+ " seconds before you can use /heal again.");
                             }
                         } else {
                             player.sendMessage(RED + args[0] + " isn't currently online.");
@@ -80,20 +75,5 @@ public class CommandHeal extends kCommand implements CommandExecutor {
             }
         }
         return false;
-    }
-    
-    public void resetCooldownHeal(final Player player) {
-        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
-            @Override
-            public void run() {
-                int cd = healcooldown.get(player.getName());
-                if (cd == 1) {
-                    healcooldown.put(player.getName(), 0);
-                } else {
-                    healcooldown.put(player.getName(), cd-1);
-                    resetCooldownHeal(player);
-                }
-            }
-        }, 20);
     }
 }

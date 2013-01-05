@@ -1,6 +1,7 @@
 package me.KeybordPiano459.kEssentials.commands;
 
 import me.KeybordPiano459.kEssentials.kEssentials;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,11 +22,11 @@ public class CommandItemname extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length > 0) {
                     if (player.hasPermission("kessentials.itemname")) {
-                        StringBuilder nameSB = new StringBuilder(args[0]);
-                        for(int i = 1; i < args.length; i++){
-                            nameSB.append(args[i]);
+                        StringBuilder str = new StringBuilder(args[0]);
+                        for(int i=1; i<args.length; i++){
+                            str.append(" ").append(args[i]);
                         }
-                        String name = nameSB.toString();
+                        String name = ChatColor.translateAlternateColorCodes('&', str.toString());
                         if (player.getItemInHand().getType() != Material.AIR) {
                             ItemStack item = player.getItemInHand();
                             ItemMeta meta = item.getItemMeta();
