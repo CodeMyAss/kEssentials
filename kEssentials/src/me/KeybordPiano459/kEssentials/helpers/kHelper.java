@@ -6,9 +6,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 
 public class kHelper {
-    static kEssentials plugin;
+    kEssentials plugin;
     public kHelper(kEssentials plugin) {
-        kHelper.plugin = plugin;
+        this.plugin = plugin;
     }
     
     public void getHelpers() {

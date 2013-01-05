@@ -7,9 +7,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class Heal implements Listener {
-    static kEssentials plugin;
+    kEssentials plugin;
     public Heal(kEssentials plugin) {
-        Heal.plugin = plugin;
+        this.plugin = plugin;
     }
     
     @EventHandler

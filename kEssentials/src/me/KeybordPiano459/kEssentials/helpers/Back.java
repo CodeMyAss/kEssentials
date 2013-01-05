@@ -10,9 +10,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 public class Back implements Listener {
-    static kEssentials plugin;
+    kEssentials plugin;
     public Back(kEssentials plugin) {
-        Back.plugin = plugin;
+        this.plugin = plugin;
     }
     
     public static HashMap<Player, Location> backloc = new HashMap<Player, Location>();

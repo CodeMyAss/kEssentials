@@ -9,9 +9,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public class kConfig {
-    static kEssentials plugin;
+    kEssentials plugin;
     public kConfig(kEssentials plugin) {
-        kConfig.plugin = plugin;
+        this.plugin = plugin;
         kConfigFile = new File(plugin.getDataFolder(), "config.yml");
         kConfigConfiguration = YamlConfiguration.loadConfiguration(kConfigFile);
     }

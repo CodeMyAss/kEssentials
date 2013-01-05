@@ -12,9 +12,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
  * @author DarkSeraphim
  */
 public class PlayerListener implements Listener {
-    static kEssentials plugin;
+    kEssentials plugin;
     public PlayerListener(kEssentials plugin) {
-        PlayerListener.plugin = plugin;
+        this.plugin = plugin;
     }
     
     @EventHandler(priority=EventPriority.LOW)

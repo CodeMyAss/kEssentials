@@ -9,9 +9,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 
 public class God implements Listener {
-    static kEssentials plugin;
+    kEssentials plugin;
     public God(kEssentials plugin) {
-        God.plugin = plugin;
+        this.plugin = plugin;
     }
     
     public HashSet<String> godmode = new HashSet<String>();

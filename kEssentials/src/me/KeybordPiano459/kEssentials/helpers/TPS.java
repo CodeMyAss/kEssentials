@@ -11,9 +11,9 @@ import org.bukkit.event.server.PluginEnableEvent;
  * @author KeybordPiano459
  */
 public class TPS implements Listener {
-    static kEssentials plugin;
+    kEssentials plugin;
     public TPS(kEssentials plugin) {
-        TPS.plugin = plugin;
+        this.plugin = plugin;
     }
     
     public int tps = 0;

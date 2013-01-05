@@ -20,9 +20,9 @@ public class CommandRam extends kCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("kessentials.ram")) {
-                        player.sendMessage(GREEN + "Free RAM: " + RAM.getFreeRAM() + "MB");
-                        player.sendMessage(GREEN + "Max RAM: " + RAM.getMaxRAM() + "MB");
-                        player.sendMessage(GREEN + "Used RAM: " + RAM.getUsedRAM() + "MB");
+                        player.sendMessage(GREEN + "Free RAM: " + plugin.getRAM().getFreeRAM() + "MB");
+                        player.sendMessage(GREEN + "Max RAM: " + plugin.getRAM().getMaxRAM() + "MB");
+                        player.sendMessage(GREEN + "Used RAM: " + plugin.getRAM().getUsedRAM() + "MB");
                     } else {
                         noPermissionsMessage(player);
                     }
@@ -31,9 +31,9 @@ public class CommandRam extends kCommand implements CommandExecutor {
                 }
             } else {
                 if (args.length == 0) {
-                    log(Level.INFO, "Free RAM: " + RAM.getFreeRAM() + "MB");
-                    log(Level.INFO, "Max RAM: " + RAM.getMaxRAM() + "MB");
-                    log(Level.INFO, "Used RAM: " + RAM.getUsedRAM() + "MB");
+                    log(Level.INFO, "Free RAM: " + plugin.getRAM().getFreeRAM() + "MB");
+                    log(Level.INFO, "Max RAM: " + plugin.getRAM().getMaxRAM() + "MB");
+                    log(Level.INFO, "Used RAM: " + plugin.getRAM().getUsedRAM() + "MB");
                 } else {
                     incorrectUsageC("/ram");
                 }

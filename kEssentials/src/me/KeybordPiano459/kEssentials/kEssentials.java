@@ -20,6 +20,7 @@ public class kEssentials extends JavaPlugin {
     private Spawn spawn;
     private God god;
     private TPS tps;
+    private RAM ram;
     public Mute mute;
     
     private String s = File.separator;
@@ -63,6 +64,7 @@ public class kEssentials extends JavaPlugin {
         mute = new Mute(this);
         playerManager = new kPlayerManager(this);
         tps = new TPS(this);
+        ram = new RAM();
         warps = new Warps(this);
         motd = new MOTD(this);
         spawn = new Spawn(this);
@@ -84,7 +86,11 @@ public class kEssentials extends JavaPlugin {
         return this.tps; 
     }
     
-    public Warps getWarps(){
+    public RAM getRAM() {
+        return this.ram;
+    }
+    
+    public Warps getWarps() {
         return this.warps;
     }
 }
