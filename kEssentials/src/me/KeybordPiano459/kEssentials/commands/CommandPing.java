@@ -49,7 +49,7 @@ public class CommandPing extends kCommand implements CommandExecutor {
                                     .invoke(player, new Object[0]);
                             Field con = Class.forName("net.minecraft.server"+packageV+".EntityPlayer").getDeclaredField("ping");
                             con.setAccessible(true);
-                            int ping = (int) con.get(nmsPlayer);
+                            int ping = con.getInt(nmsPlayer);
                             player.sendMessage(GREEN + "Pong - " + ping + " MS");
                         } catch (Exception e) {
                             player.sendMessage(GREEN + "Pong");

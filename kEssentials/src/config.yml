@@ -10,6 +10,9 @@ motd-on-login: true
 # What should the cooldown be on /heal (in seconds)
 heal-cooldown: 60
 
+# What do you want the server's MOTD to be (include color codes!)
+# Type 'none' to set to the MOTD in the server.properties file
+server-motd: none
 
 
 
@@ -29,9 +32,6 @@ colors-allowed-chat: true
 # Set to 0 for infinite (vanilla minecraft)
 chat-radius: 100
 
-# Do you want to use the kChat spam blocker?
-use-spam-blocker: true
-
 
 
 
@@ -47,5 +47,60 @@ starting-balance: 30
 # This is what will be displayed with money ($10)
 currency-symbol: '$'
 
-# Changes in players' money will be logged
-log-economy-data: true
+
+
+
+##################################################
+# +--------------------------------------------+ #
+# |                 kProtection                | #
+# +--------------------------------------------+ #
+##################################################
+
+# With this, you can prevent certain mobs from spawning
+# Note that you will still be able to spawn these mobs with spawn eggs
+mob-spawn:
+  bat: false
+  blaze: false
+  cavespider: false
+  chicken: false
+  cow: false
+  creeper: false
+  enderdragon: false
+  enderman: false
+  ghast: false
+  irongolem: false
+  magmacube: false
+  mooshroom: false
+  ocelot: false
+  pig: false
+  pigzombie: false
+  sheep: false
+  silverfish: false
+  skeleton: false
+  slime: false
+  snowgolem: false
+  spider: false
+  squid: false
+  villager: false
+  witch: false
+  wither: false
+  wolf: false
+  zombie: false
+
+# What block IDs should not be able to be placed?
+# You can still place these blocks with the kprotection.bypass.place permission
+blacklist:
+  place:
+  - 7
+  - 10
+  - 11
+  - 51
+
+# You can still break these blocks with the kprotection.bypass.break permission
+  break:
+  - 7
+
+# With this, you can disable certain types of weather from occuring
+weather:
+  lightning: false
+  storm: false
