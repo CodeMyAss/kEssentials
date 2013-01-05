@@ -14,7 +14,7 @@ public class kPlayerManager {
 
     public kPlayerManager(kEssentials plugin) {
         this.plugin = plugin;
-        this.players = new HashMap<>();
+        this.players = new HashMap<String, kPlayer>();
     }
 
     public kPlayer createPlayer(String name) {
