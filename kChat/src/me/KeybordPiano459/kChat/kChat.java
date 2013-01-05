@@ -34,6 +34,21 @@ public class kChat extends JavaPlugin {
         getLogger().info("kChat v1.0 has been disabled.");
     }
     
+    public synchronized String getOpColour()
+    {
+        return this.opcolor;
+    }
+    
+    public synchronized boolean coloursAreAllowed()
+    {
+        return this.colorallowed;
+    }
+    
+    public synchronized int getChatRadius()
+    {
+        return this.chatradius;
+    }
+    
     private void registerEvents() {
         registerEvent(new ChatColors(this));
         registerEvent(new ChatRadius(this));

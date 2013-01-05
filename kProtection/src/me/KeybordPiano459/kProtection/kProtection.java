@@ -1,5 +1,6 @@
 package me.KeybordPiano459.kProtection;
 
+import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,7 +12,7 @@ public class kProtection extends JavaPlugin {
     public void onEnable() {
         if (kEssentials()) {
             getLogger().info("kProtection v1.0 has been enabled!");
-            configclass = new Config();
+            configclass = new Config((kEssentials)getServer().getPluginManager().getPlugin("kEssentials"));
             registerEvents();
         } else {
             getLogger().warning("+----------------------------------------------+");
@@ -32,7 +33,7 @@ public class kProtection extends JavaPlugin {
     
     private void registerEvents() {
         registerEvent(new BlacklistedIDs(this));
-        registerEvent(new MobSpawns());
+        registerEvent(new MobSpawns(this));
         registerEvent(new WeatherBlocker(this));
     }
     

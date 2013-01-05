@@ -1,15 +1,14 @@
 package me.KeybordPiano459.kEssentials.commands;
 
 import java.util.logging.Level;
-import me.KeybordPiano459.kEssentials.helpers.RAM;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandRam extends kCommand implements CommandExecutor {
-    public CommandRam(kEssentials plugin) {
+public class CommandRAM extends kCommand implements CommandExecutor {
+    public CommandRAM(kEssentials plugin) {
         super(plugin);
     }
     

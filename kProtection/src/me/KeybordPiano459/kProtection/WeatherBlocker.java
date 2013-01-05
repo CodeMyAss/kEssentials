@@ -7,24 +7,21 @@ import org.bukkit.event.weather.WeatherChangeEvent;
 
 public class WeatherBlocker implements Listener {
     
-    boolean storm;
-    boolean lightning;
-    
-    static kProtection plugin;
+    kProtection prot;
     public WeatherBlocker(kProtection plugin) {
-        WeatherBlocker.plugin = plugin;
+        this.prot = plugin;
     }
     
     @EventHandler
     public void onWeatherChange(WeatherChangeEvent event) {
-        if (storm && event.toWeatherState()) {
+        if (prot.getConfigClass().storm && event.toWeatherState()) {
             event.setCancelled(true);
         }
     }
     
     @EventHandler
     public void onLightningStrike(LightningStrikeEvent event) {
-        if (lightning) {
+        if (prot.getConfigClass().lightning) {
             event.setCancelled(true);
         }
     }

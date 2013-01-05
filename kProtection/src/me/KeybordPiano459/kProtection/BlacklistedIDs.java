@@ -13,9 +13,9 @@ public class BlacklistedIDs implements Listener {
     List<Integer> breakids;
     List<Integer> placeids;
     
-    static kProtection plugin;
+    kProtection plugin;
     public BlacklistedIDs(kProtection plugin) {
-        BlacklistedIDs.plugin = plugin;
+        this.plugin = plugin;
         breakids = plugin.getConfigClass().breakids;
         placeids = plugin.getConfigClass().placeids;
     }

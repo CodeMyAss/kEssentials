@@ -7,20 +7,21 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public class ChatColors implements Listener {
-    static kChat plugin;
+    kChat plugin;
     public ChatColors(kChat plugin) {
-        ChatColors.plugin = plugin;
+        this.plugin = plugin;
     }
     
     @EventHandler
     public void onChat(AsyncPlayerChatEvent event) {
         Player player = event.getPlayer();
         String msg = event.getMessage();
-        if (plugin.colorallowed) {
+        if (plugin.coloursAreAllowed()) {
             event.setMessage(ChatColor.translateAlternateColorCodes('&', msg));
         }
-        if (player.isOp() && !plugin.opcolor.equals("none")) {
-            event.setFormat(ChatColor.translateAlternateColorCodes('&', "<" + plugin.opcolor + player.getName() + ChatColor.RESET + "> " + msg));
+        String opcolour = plugin.getOpColour();
+        if (player.isOp() && opcolour.equals("none")) {
+            event.setFormat(ChatColor.translateAlternateColorCodes('&', "<" + opcolour + player.getName() + ChatColor.RESET + "> " + msg));
         }
     }
 }
