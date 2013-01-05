@@ -36,7 +36,7 @@ public class CommandDelwarp extends kCommand implements CommandExecutor {
                         noPermissionsMessage(player);
                     }
                 } else {
-                    incorrectUsage(player, "/setwarp <name>");
+                    incorrectUsage(player, "/delwarp <name>");
                 }
             } else {
                 consoleError();

@@ -1,7 +1,6 @@
 package me.KeybordPiano459.kEssentials.commands;
 
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import me.KeybordPiano459.kEssentials.helpers.GarbageCollector;
 import me.KeybordPiano459.kEssentials.kEssentials;
 import org.bukkit.command.Command;
@@ -26,9 +25,9 @@ public class CommandGarbagecollector extends kCommand implements CommandExecutor
                             player.sendMessage(RED + "You may be using CACAO Java. Please switch to another JVM.");
                             player.sendMessage(RED + "Some of these values may be negative.");
                         }
-                        player.sendMessage(GREEN + "Used Memory Before: " + gc.getUsedMemoryBefore() + " MB");
-                        player.sendMessage(GREEN + "Current Memory: " + gc.getCurrentMemory() + " MB");
-                        player.sendMessage(GREEN + "Memory Freed: " + gc.getMemoryFreed() + " MB");
+                        player.sendMessage(GREEN + "Used Memory Before: " + gc.getUsedMemoryBefore() + "MB");
+                        player.sendMessage(GREEN + "Current Memory: " + gc.getCurrentMemory() + "MB");
+                        player.sendMessage(GREEN + "Memory Freed: " + gc.getMemoryFreed() + "MB");
                         player.sendMessage(GREEN + "Processors Available: " + gc.getProcessors());
                     } else {
                         noPermissionsMessage(player);
