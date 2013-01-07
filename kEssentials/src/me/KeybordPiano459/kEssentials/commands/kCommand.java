@@ -50,7 +50,7 @@ public class kCommand {
         getCommand("online", new CommandOnline(plugin));
         getCommand("ping", new CommandPing(plugin));
         getCommand("rain", new CommandRain(plugin));
-        getCommand("ram", new CommandRam(plugin));
+        getCommand("ram", new CommandRAM(plugin));
         getCommand("reappear", new CommandReappear(plugin));
         getCommand("remove", new CommandRemove(plugin));
         getCommand("repair", new CommandRepair(plugin));

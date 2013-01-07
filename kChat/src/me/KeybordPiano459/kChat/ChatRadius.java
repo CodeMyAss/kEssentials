@@ -7,34 +7,39 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class ChatRadius implements Listener {
-    static kChat plugin;
+    kChat plugin;
     public ChatRadius(kChat plugin) {
-        ChatRadius.plugin = plugin;
+        this.plugin = plugin;
     }
     
     @EventHandler
-    public void onChat(AsyncPlayerChatEvent event) {
-        Player player = event.getPlayer();
-        int nearbyn = plugin.chatradius;
+    public void onChat(final AsyncPlayerChatEvent event) {
+        final Player player = event.getPlayer();
+        final int nearbyn = plugin.getChatRadius();
         if (nearbyn != 0) {
             event.setCancelled(true);
-            int pheard = 0;
-            List<Entity> nearby = player.getNearbyEntities(nearbyn, nearbyn, nearbyn);
-            for (Entity e : nearby) {
-                if (e instanceof Player) {
-                    pheard++;
-                    Player p = (Player) e;
-                    p.sendMessage("<" + player.getName() + "> " + event.getMessage());
+            new BukkitRunnable()
+            {
+                public void run()
+                {
+                    int pheard = 0;
+                    List<Entity> nearby = player.getNearbyEntities(nearbyn, nearbyn, nearbyn);
+                    for (Entity e : nearby) {
+                        if (e instanceof Player) {
+                            pheard++;
+                            Player p = (Player) e;
+                            p.sendMessage("<" + player.getName() + "> " + event.getMessage());
+                        }
+                    }
+
+                    if (pheard == 0) {
+                        player.sendMessage(ChatColor.YELLOW + "Nobody heard you speak.");
+                    }
                 }
-            }
-            
-            if (pheard == 0) {
-                player.sendMessage(ChatColor.YELLOW + "Nobody heard you speak.");
-            }
-        } else {
-            
+            }.runTaskLater(plugin, 0L);
         }
     }
 }
