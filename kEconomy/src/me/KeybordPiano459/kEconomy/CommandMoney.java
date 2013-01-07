@@ -19,6 +19,7 @@ public class CommandMoney implements CommandExecutor {
     ChatColor GREEN = ChatColor.GREEN;
     ChatColor RED = ChatColor.RED;
     ChatColor RESET = ChatColor.RESET;
+    private kEconomy keconomy;
     private Money money;
     
     @Override
@@ -28,7 +29,7 @@ public class CommandMoney implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     if (player.hasPermission("keconomy.money.view")) {
-                        player.sendMessage(GREEN + "You currently have " + kEconomy.currencySymbol + money.getMoney(player.getName()));
+                        player.sendMessage(GREEN + "You currently have " + keconomy.currencySymbol + money.getMoney(player.getName()));
                     }
                 } else if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("give")) {
@@ -105,7 +106,7 @@ public class CommandMoney implements CommandExecutor {
                             if (sender.getServer().getPlayer(args[1]) != null) {
                                 Player targetplayer = sender.getServer().getPlayer(args[1]);
                                 double amount = money.getMoney(targetplayer.getName());
-                                player.sendMessage(GREEN + targetplayer.getName() + " has " + kEconomy.currencySymbol + amount);
+                                player.sendMessage(GREEN + targetplayer.getName() + " has " + keconomy.currencySymbol + amount);
                             } else {
                                 player.sendMessage(RED + args[1] + " doesn't have a kEconomy balance.");
                             }

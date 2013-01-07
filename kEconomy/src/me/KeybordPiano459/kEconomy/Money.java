@@ -5,7 +5,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 public class Money {
     
-    private boolean logging = kEconomy.logging;
+    private kEconomy keconomy;
     private String name;
     private kEssentials kessentials;
     private FileConfiguration pconfig = kessentials.getPlayerManager().getPlayer(name).getPlayerConfig().getConfig();
@@ -54,7 +54,7 @@ public class Money {
     
     public void createAccount(String player) {
         if (!hasAccount(player)) {
-            pconfig.set("money", kEconomy.startingBalance);
+            pconfig.set("money", keconomy.startingBalance);
         }
     }
     

@@ -6,12 +6,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class kEconomy extends JavaPlugin {
     
-    private static me.KeybordPiano459.kEssentials.kEssentials plugin;
     private static Plugin kEssentials = Bukkit.getServer().getPluginManager().getPlugin("kEssentials");
-    public static double startingBalance = kEssentials.getConfig().getDouble("starting-balance");
-    public static String currencySymbol = kEssentials.getConfig().getString("currency-symbol");
-    public static boolean logging = kEssentials.getConfig().getBoolean("log-economy-data");
+    public double startingBalance = kEssentials.getConfig().getDouble("starting-balance");
+    public String currencySymbol = kEssentials.getConfig().getString("currency-symbol");
+    public boolean logging = kEssentials.getConfig().getBoolean("log-economy-data");
     
+    @Override
     public void onEnable() {
         if (kEssentials()) {
             getLogger().info("kEconomy v1.0 has been enabled!");
@@ -26,12 +26,10 @@ public class kEconomy extends JavaPlugin {
             this.setEnabled(false);
         }
         
-        Logging logging = new Logging(plugin);
-        logging.createLog();
-        
         getServer().getPluginCommand("money").setExecutor(new CommandMoney(this));
     }
     
+    @Override
     public void onDisable() {
         getLogger().info("kEconomy v1.0 has been disabled.");
     }
