@@ -107,6 +107,10 @@ commands:
     description: Make it so that someone can't chat
     aliases: [silence, kmute, ksilence]
     permission: kessentials.mute
+  nick:
+    description: Set your chatting name
+    aliases: [setname, knick, ksetname]
+    permission: kessentials.nick
   night:
     description: Make it nighttime in your world
     aliases: [nighttime, knight, knighttime]
@@ -187,6 +191,10 @@ commands:
     description: List all set warps
     aliases: [wl, kwarplist, kwl]
     permission: kessentials.warplist
+  whois:
+    description: View who is behind a nickname
+    aliases: [kwhois]
+    permission: kessentials.whois
   workbench:
     description: Open up a crafting table
     aliases: [craft, kcraft, kworkbench]
@@ -220,6 +228,7 @@ permissions:
       kessentials.killall: true
       kessentials.motd: true
       kessentials.mute: true
+      kessentials.nick: true
       kessentials.night: true
       kessentials.online: true
       kessentials.ping: true
@@ -240,6 +249,7 @@ permissions:
       kessentials.unmute: true
       kessentials.warp: true
       kessentials.warplist: true
+      kessentials.whois: true
       kessentials.workbench: true
   kessentials.back:
     description: /back
@@ -298,9 +308,9 @@ permissions:
   kessentials.mute:
     description: /mute <player>
     default: op
-#  kessentials.myhead:
-#    description: /myhead
-#    default: op
+  kessentials.nick:
+    description: /nick [name]
+    default: op
   kessentials.night:
     description: /night
     default: op
@@ -358,12 +368,12 @@ permissions:
   kessentials.warplist:
     description: /warplist
     default: true
+  kessentials.whois:
+    description: /whois [nickname]
+    default: true
   kessentials.workbench:
     description: /workbench
     default: op
-#  kessentials.worldtime:
-#    description: /worldtime
-#    default: true
 
   kessentials.clearenderchest.*:
     description: All clearenderchest permissions

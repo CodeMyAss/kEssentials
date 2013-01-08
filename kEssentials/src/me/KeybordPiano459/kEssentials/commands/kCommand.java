@@ -46,11 +46,12 @@ public class kCommand {
         getCommand("me", new CommandMe(plugin));
         getCommand("motd", new CommandMotd(plugin));
         getCommand("mute", new CommandMute(plugin));
+        getCommand("nick", new CommandNick(plugin));
         getCommand("night", new CommandNight(plugin));
         getCommand("online", new CommandOnline(plugin));
         getCommand("ping", new CommandPing(plugin));
         getCommand("rain", new CommandRain(plugin));
-        getCommand("ram", new CommandRAM(plugin));
+        getCommand("ram", new CommandRam(plugin));
         getCommand("reappear", new CommandReappear(plugin));
         getCommand("remove", new CommandRemove(plugin));
         getCommand("repair", new CommandRepair(plugin));
@@ -66,6 +67,7 @@ public class kCommand {
         getCommand("unmute", new CommandUnmute(plugin));
         getCommand("warp", new CommandWarp(plugin));
         getCommand("warplist", new CommandWarplist(plugin));
+        getCommand("whois", new CommandWhois(plugin));
         getCommand("workbench", new CommandWorkbench(plugin));
     }
     

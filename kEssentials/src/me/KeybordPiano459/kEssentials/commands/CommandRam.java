@@ -7,8 +7,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandRAM extends kCommand implements CommandExecutor {
-    public CommandRAM(kEssentials plugin) {
+public class CommandRam extends kCommand implements CommandExecutor {
+    public CommandRam(kEssentials plugin) {
         super(plugin);
     }
     
