@@ -27,19 +27,6 @@ public class PlayerConfig {
         return file.isFile() && file.exists();
     }
 
-    public void resetPlayerConfig() {
-        if (customConfigFile != null) {
-            customConfigFile.delete();
-        }
-
-        reloadPlayerConfig();
-        this.customConfig.set("muted", false);
-        this.customConfig.set("backpack", "54;");
-        this.customConfig.set("money", kconfig.getConfig().getDouble("starting-balance"));
-        //getPlayerConfig(player).set("money", kConfig.getConfig().getDouble("starting-balance"));
-        savePlayerConfig();
-    }
-
     public void reloadPlayerConfig() {
         if (customConfigFile == null) {
             customConfigFile = new File(plugin.getDataFolder(), "playerdata" + File.separator + player + ".yml");

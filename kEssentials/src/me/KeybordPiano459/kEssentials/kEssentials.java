@@ -21,6 +21,7 @@ public class kEssentials extends JavaPlugin {
     private God god;
     private TPS tps;
     private RAM ram;
+    private Nickname nick;
     public Mute mute;
     
     private String s = File.separator;
@@ -33,7 +34,7 @@ public class kEssentials extends JavaPlugin {
         //Register events
         registerInstances();
         khelper.getHelpers();
-        kcommand.getCommands();
+        getCommands();
         
         //Create files
         folder.mkdirs();
@@ -68,6 +69,14 @@ public class kEssentials extends JavaPlugin {
         warps = new Warps(this);
         motd = new MOTD(this);
         spawn = new Spawn(this);
+        nick = new Nickname(this);
+    }
+    
+    private void getCommands() {
+        String[] commands = kcommand.commandlist;
+        for (String command : commands) {
+            getServer().getPluginCommand(command).setExecutor(new kCommandHandler(this));
+        }
     }
     
     public kConfig getkConfig() {
@@ -92,5 +101,9 @@ public class kEssentials extends JavaPlugin {
     
     public Warps getWarps() {
         return this.warps;
+    }
+    
+    public Nickname getNick() {
+        return this.nick;
     }
 }

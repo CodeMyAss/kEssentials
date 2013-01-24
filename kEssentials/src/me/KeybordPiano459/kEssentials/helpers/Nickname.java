@@ -20,7 +20,7 @@ public class Nickname extends kHelper implements Listener {
         Player player = event.getPlayer();
         String name = player.getName();
         FileConfiguration pconfig = plugin.getPlayerManager().getPlayer(name).getPlayerConfig().getConfig();
-        if (pconfig.getString("nickname") == null) {
+        if (pconfig.getString("nickname").equals("Error")) {
             pconfig.set("nickname", name);
         }
         player.setDisplayName(pconfig.getString("nickname"));
