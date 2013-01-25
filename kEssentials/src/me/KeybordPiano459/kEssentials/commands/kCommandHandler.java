@@ -126,6 +126,9 @@ public class kCommandHandler implements CommandExecutor {
         } else if (cmd.getName().equalsIgnoreCase("rules")) {
             CommandRules cmdrules = new CommandRules(plugin);
             return cmdrules.execute(sender, args);
+        } else if (cmd.getName().equalsIgnoreCase("seed")) {
+            CommandSeed cmdseed = new CommandSeed(plugin);
+            return cmdseed.execute(sender, args);
         } else if (cmd.getName().equalsIgnoreCase("sethome")) {
             CommandSethome cmdsethome = new CommandSethome(plugin);
             return cmdsethome.execute(sender, args);
@@ -165,6 +168,9 @@ public class kCommandHandler implements CommandExecutor {
         } else if (cmd.getName().equalsIgnoreCase("workbench")) {
             CommandWorkbench cmdworkbench = new CommandWorkbench(plugin);
             return cmdworkbench.execute(sender, args);
+        } else if (cmd.getName().equalsIgnoreCase("worldinfo")) {
+            CommandWorldinfo cmdwi = new CommandWorldinfo(plugin);
+            return cmdwi.execute(sender, args);
         }
         return false;
     }

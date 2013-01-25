@@ -16,18 +16,22 @@ public class CommandPlatform extends kCommand {
     public boolean execute(CommandSender sender, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            if (args.length == 0) {
-                Location loc = player.getLocation();
-                World world = player.getWorld();
-                double x = loc.getX();
-                double y = loc.getY();
-                double z = loc.getZ();
-                Location platformloc = new Location(world, x, y-1, z);
-                Block block = player.getWorld().getBlockAt(platformloc);
-                block.setType(Material.GLASS);
-                player.sendMessage(GREEN + "Platform has been placed.");
+            if (player.hasPermission("kessentials.platform")) {
+                if (args.length == 0) {
+                    Location loc = player.getLocation();
+                    World world = player.getWorld();
+                    double x = loc.getX();
+                    double y = loc.getY();
+                    double z = loc.getZ();
+                    Location platformloc = new Location(world, x, y-1, z);
+                    Block block = player.getWorld().getBlockAt(platformloc);
+                    block.setType(Material.GLASS);
+                    player.sendMessage(GREEN + "Platform has been placed.");
+                } else {
+                    incorrectUsage(player, "/platform");
+                }
             } else {
-                incorrectUsage(player, "/platform");
+                noPermissionsMessage(player);
             }
         } else {
             consoleError();

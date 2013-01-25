@@ -12,18 +12,35 @@ public class CommandList extends kCommand {
     }
 
     public boolean execute(CommandSender sender, String[] args) {
-        Player[] players = Bukkit.getServer().getOnlinePlayers();
-        if (args.length == 0) {
-            String liststr = "";
-            for (Player p : players) {
-                liststr += p.getDisplayName() + ", ";
+        if (sender instanceof Player) {
+            Player player = (Player) sender;
+            if (player.hasPermission("kessentials.list")) {
+                Player[] players = Bukkit.getServer().getOnlinePlayers();
+                if (args.length == 0) {
+                    String liststr = "";
+                    for (Player p : players) {
+                        liststr += p.getDisplayName() + ", ";
+                    }
+                    
+                    player.sendMessage(liststr);
+                } else {
+                    incorrectUsage(player, "/list");
+                }
+            } else {
+                noPermissionsMessage(player);
             }
-            
-            if (sender instanceof Player) ((Player)sender).sendMessage(liststr);
-            else log(Level.INFO, liststr);
         } else {
-            if (sender instanceof Player) incorrectUsage(((Player)sender), "/list");
-            else incorrectUsageC("/list");
+            Player[] players = Bukkit.getServer().getOnlinePlayers();
+            if (args.length == 0) {
+                String liststr = "";
+                for (Player p : players) {
+                    liststr += p.getDisplayName() + ", ";
+                }
+                
+                log(Level.INFO, liststr);
+            } else {
+                incorrectUsageC("/list");
+            }
         }
         return false;
     }

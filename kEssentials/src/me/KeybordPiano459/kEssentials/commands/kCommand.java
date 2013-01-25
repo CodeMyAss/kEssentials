@@ -11,11 +11,13 @@ public class kCommand {
         this.plugin = plugin;
     }
     
-    public static ChatColor DARK_GRAY = ChatColor.DARK_GRAY;
-    public static ChatColor GREEN = ChatColor.GREEN;
-    public static ChatColor RED = ChatColor.RED;
-    public static ChatColor RESET = ChatColor.RESET;
-    public static ChatColor YELLOW = ChatColor.YELLOW;
+    public ChatColor AQUA = ChatColor.AQUA;
+    public ChatColor DARK_GRAY = ChatColor.DARK_GRAY;
+    public ChatColor DARK_GREEN = ChatColor.DARK_GREEN;
+    public ChatColor GREEN = ChatColor.GREEN;
+    public ChatColor RED = ChatColor.RED;
+    public ChatColor RESET = ChatColor.RESET;
+    public ChatColor YELLOW = ChatColor.YELLOW;
     
     public void consoleError() {
         log(Level.WARNING, "This command can't be executed from the console!");
@@ -76,6 +78,7 @@ public class kCommand {
         "remove",
         "repair",
         "rules",
+        "seed",
         "sethome",
         "setspawn",
         "setwarp",
@@ -88,6 +91,7 @@ public class kCommand {
         "warp",
         "warplist",
         "whois",
-        "workbench"
+        "workbench",
+        "worldinfo"
     };
 }
