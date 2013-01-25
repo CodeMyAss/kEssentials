@@ -1,34 +1,435 @@
-name: kEconomy
-main: me.KeybordPiano459.kEconomy.kEconomy
-version: 1.0
-depend: [kEssentials]
+name: kEssentials
+main: me.KeybordPiano459.kEssentials.kEssentials
+version: 0.1a
 
 commands:
-  money:
-    description: Base command for kEconomy
+  back:
+    description: Teleport to your last location
+    aliases: [kback]
+    permission: kessentials.back
+  backpack:
+    description: Open a personal backpack
+    aliases: [kbackpack]
+    permission: kessentials.backpack
+  butcher:
+    description: Kill all nearby mobs
+    aliases: [kbutcher]
+    permission: kessentials.butcher
+  clearenderchest:
+    description: Clear your entire ender chest
+    aliases: [ce, kce, kclearenderchest]
+    permission: kessentials.clearenderchest.self
+  clearinventory:
+    description: Clear your entire inventory
+    aliases: [ci, kci, kclearinventory]
+    permission: kessentials.clearinventory.self
+  day:
+    description: Make it daytime in your world
+    aliases: [daytime, kday, kdaytime]
+    permission: kessentials.day
+  delwarp:
+    description: Delete an already set warp
+    aliases: [deletewarp, kdeletewarp, kdelwarp]
+    permission: kessentials.delwarp
+  disappear:
+    description: Make yourself invisible
+    aliases: [invisible, kdisappear, kinvisible]
+    permission: kessentials.disappear
+  enderchest:
+    description: View someone's enderchest
+    aliases: [viewender, seeender, kenderchest, kseeender, kviewender]
+    permission: kessentials.enderchest
+  fly:
+    description: Toggle flymode on/off
+    aliases: [kfly]
+    permission: kessentials.fly
+  garbagecollector:
+    description: Run the Java garbage collector
+    aliases: [gc, kgarbagecollector, kgc]
+    permission: kessentials.garbagecollector
+  getid:
+    description: Get the ID of what you're holding
+    aliases: [handid, kgetid, khandid]
+    permission: kessentials.getid
+  god:
+    description: Toggle godmode on and off
+    aliases: [invincible, kgod, kinvincible]
+    permission: kessentials.god
+  hat:
+    description: Wear a block on your head
+    aliases: [khat]
+    permission: kessentials.hat
+  heal:
+    description: Heal yourself or another player
+    aliases: [kheal]
+    permission: kessentials.heal.self
+  home:
+    description: Teleport to your home
+    aliases: [khome]
+    permission: kessentials.home
+  ignite:
+    description: Set someone on fire
+    aliases: [burn, kburn, kignite]
+    permission: kessentials.ignite
+  ip:
+    description: View another player's IP
+    aliases: [kip]
+    permission: kessentials.ip
+  itemname:
+    description: Name the item in your hand
+    aliases: [nameitem, kitemname, knameitem]
+    permission: kessentials.itemname
+  kick:
+    description: Kick a player from the server
+    aliases: []
+    permission: kessentials.kick
+  kickall:
+    description: Kick everybody on the server
+    aliases: [masskick, kmasskick]
+    permission: kessentials.kickall
+  kill:
+    description: Kill another player instantly
+    aliases: [murder, kmurder]
+    permission: kessentials.kill
+  killall:
+    description: Kill everybody on the server
+    aliases: [massmurder, kmassmurder]
+    permission: kessentials.killall
+  list:
+    description: List every player online
+    aliases: [klist]
+    permission: kessentials.list
+  me:
+    description: Perform an action in the chat
+    aliases: [action, kaction, kme]
+    permission: kessentials.me
+  motd:
+    description: See the message of the day
+    aliases: [kmotd]
+    permission: kessentials.motd
+  mute:
+    description: Make it so that someone can't chat
+    aliases: [silence, kmute, ksilence]
+    permission: kessentials.mute
+  nick:
+    description: Set your chatting name
+    aliases: [setname, knick, ksetname]
+    permission: kessentials.nick
+  night:
+    description: Make it nighttime in your world
+    aliases: [nighttime, knight, knighttime]
+    permission: kessentials.night
+  online:
+    description: Check if a player is online
+    aliases: [offline, koffline, konline]
+    permission: kessentials.online
+  ping:
+    description: Useful to check if you're lagging
+    aliases: [pong, kping, kpong]
+    permission: kessentials.ping
+  platform:
+    description: Place a block directly beneath you
+    aliases: [kplatform]
+    permission: kessentials.platform
+  rain:
+    description: Turn on a storm in your world
+    aliases: [storm, kstorm, krain]
+    permission: kessentials.rain
+  ram:
+    description: See the server's RAM usage
+    aliases: [speed, kram, kspeed]
+    permission: kessentials.ram
+  reappear:
+    description: Reveal yourself if invisible
+    aliases: [kreappear]
+    permission: kessentials.reappear
+  remove:
+    description: Remove nearby entities
+    aliases: [kremove]
+    permission: kessentials.remove
+  repair:
+    description: Repair the item in your hand
+    aliases: [krepair]
+    permission: kessentials.repair
+  rules:
+    description: View the server rules
+    aliases: [krules]
+    permission: kessentials.rules
+  sethome:
+    description: Set your home
+    aliases: [ksethome]
+    permission: kessentials.sethome
+  setspawn:
+    description: Set the server spawn
+    aliases: [ksetspawn]
+    permission: kessentials.setspawn
+  setwarp:
+    description: Set a warp location
+    aliases: [ksetwarp]
+    permission: kessentials.setwarp
+  spawn:
+    description: Teleport to the server spawn
+    aliases: [kspawn]
+    permission: kessentials.spawn
+  spawner:
+    description: Change a spawner's mob type
+    aliases: [kspawner]
+    permission: kessentials.spawner
+  suicide:
+    description: Take a guess...
+    aliases: [ksuicide]
+    permission: kessentials.suicide
+  sun:
+    description: Turn the weather off in your world
+    aliases: [ksun]
+    permission: kessentials.sun
+  tps:
+    description: Check the server's TPS rate
+    aliases: [ktps]
+    permission: kessentials.tps
+  unmute:
+    description: Un-mute a person
+    aliases: [unsilence, kunmute, kunsilence]
+    permission: kessentials.unmute
+  warp:
+    description: Warp to a set location
+    aliases: [kwarp]
+    permission: kessentials.warp
+  warplist:
+    description: List all set warps
+    aliases: [wl, kwarplist, kwl]
+    permission: kessentials.warplist
+  whois:
+    description: View who is behind a nickname
+    aliases: [kwhois]
+    permission: kessentials.whois
+  workbench:
+    description: Open up a crafting table
+    aliases: [craft, kcraft, kworkbench]
+    permission: kessentials.workbench
 
 permissions:
-  keconomy.*:
-    description: Access to all kEconomy stuff
+  kessentials.*:
+    description: All permissions
     default: op
     children:
-      keconomy.money.give: true
-      keconomy.money.pay: true
-      keconomy.money.take: true
-      keconomy.money.view: true
-      keconomy.money.view.others: true
-  keconomy.money.give:
-    description: Access to use /money [give]
+      kessentials.back: true
+      kessentials.backpack: true
+      kessentials.butcher: true
+      kessentials.clearenderchest.*: true
+      kessentials.clearinventory.*: true
+      kessentials.day: true
+      kessentials.delwarp: true
+      kessentials.enderchest: true
+      kessentials.fly: true
+      kessentials.garbagecollector: true
+      kessentials.getid: true
+      kessentials.god: true
+      kessentials.hat: true
+      kessentials.heal.*: true
+      kessentials.home: true
+      kessentials.ignite: true
+      kessentials.ip: true
+      kessentials.itemname: true
+      kessentials.kick: true
+      kessentials.kill: true
+      kessentials.killall: true
+      kessentials.list: true
+      kessentials.motd: true
+      kessentials.mute: true
+      kessentials.nick: true
+      kessentials.night: true
+      kessentials.online: true
+      kessentials.ping: true
+      kessentials.platform: true
+      kessentials.rain: true
+      kessentials.ram: true
+      kessentials.reappear: true
+      kessentials.remove: true
+      kessentials.repair: true
+      kessentials.rules: true
+      kessentials.sethome: true
+      kessentials.setspawn: true
+      kessentials.setwarp: true
+      kessentials.spawn: true
+      kessentials.spawner: true
+      kessentials.suicide: true
+      kessentials.sun: true
+      kessentials.tps: true
+      kessentials.unmute: true
+      kessentials.warp: true
+      kessentials.warplist: true
+      kessentials.whois: true
+      kessentials.workbench: true
+  kessentials.back:
+    description: /back
     default: op
-  keconomy.money.pay:
-    description: Access to use /money [pay]
-    default: true
-  keconomy.money.take:
-    description: Access to use /money [take]
+  kessentials.backpack:
+    description: /backpack
     default: op
-  keconomy.money.view:
-    description: Access to see your money
+  kessentials.day:
+    description: /day
+    default: op
+  kessentials.delwarp:
+    description: /delwarp <warp>
+    default: op
+  kessentials.enderchest:
+    description: /enderchest <player>
+    default: op
+  kessentials.fly:
+    description: /fly
+    default: op
+  kessentials.garbagecollector:
+    description: /garbagecollector
     default: true
-  keconomy.money.view.others:
-    description: Access to view other players money
+  kessentials.getid:
+    description: /getid
     default: true
+  kessentials.god:
+    description: /god
+    default: op
+  kessentials.hat:
+    description: /hat
+    default: op
+  kessentials.home:
+    description: /home
+    default: true
+  kessentials.ignite:
+    description: /ignite <player>
+    default: op
+  kessentials.ip:
+    description: /ip <player>
+    default: true
+  kessentials.itemname:
+    description: /itemname <name>
+    default: op
+  kessentials.kick:
+    description: /kick <player>
+    default: op
+  kessentials.kill:
+    description: /kill <player>
+    default: op
+  kessentials.killall:
+    description: /killall
+    default: op
+  kessentials.list:
+    description: /list
+    default: true
+  kessentials.motd:
+    description: /motd
+    default: true
+  kessentials.mute:
+    description: /mute <player>
+    default: op
+  kessentials.nick:
+    description: /nick [name]
+    default: op
+  kessentials.night:
+    description: /night
+    default: op
+  kessentials.online:
+    description: /online <player>
+    default: true
+  kessentials.ping:
+    description: /ping
+    default: true
+  kessentials.platform:
+    description: /platform
+    default: true
+  kessentials.rain:
+    description: /rain
+    default: op
+  kessentials.ram:
+    description: /ram
+    default: true
+  kessentials.remove:
+    description: /remove <all|arrows|boats|items|minecarts|paintings> <radius>
+    default: op
+  kessentials.repair:
+    description: /repair
+    default: op
+  kessentials.rules:
+    description: /rules
+    default: true
+  kessentials.sethome:
+    description: /sethome
+    default: true
+  kessentials.setspawn:
+    description: /setspawn
+    default: op
+  kessentials.setwarp:
+    description: /setwarp
+    default: op
+  kessentials.spawn:
+    description: /spawn
+    default: true
+  kessentials.spawner:
+    description: /spawner
+    default: op
+  kessentials.suicide:
+    description: /suicide
+    default: true
+  kessentials.sun:
+    description: /sun
+    default: op
+  kessentials.tps:
+    description: /tps
+    default: true
+  kessentials.unmute:
+    description: /unmute <player>
+    default: op
+  kessentials.warp:
+    description: /warp
+    default: true
+  kessentials.warplist:
+    description: /warplist
+    default: true
+  kessentials.whois:
+    description: /whois [nickname]
+    default: true
+  kessentials.workbench:
+    description: /workbench
+    default: op
+
+  kessentials.clearenderchest.*:
+    description: All clearenderchest permissions
+    default: op
+    children:
+      kessentials.clearenderchest.others: true
+      kessentials.clearenderchest.self: true
+  kessentials.clearenderchest.others:
+    description: /clearenderchest [player]
+    default: op
+  kessentials.clearenderchest.self:
+    description: /clearenderchest
+    default: true
+
+  kessentials.clearinventory.*:
+    description: All clearinventory permissions
+    default: op
+    children:
+      kessentials.clearinventory.others: true
+      kessentials.clearinventory.self: true
+  kessentials.clearinventory.others:
+    description: /clearinventory [player]
+    default: op
+  kessentials.clearinventory.self:
+    description: /clearinventory
+    default: true
+
+  kessentials.heal.*:
+    description: All heal permissions
+    default: op
+    children:
+      kessentials.heal.bypass: true
+      kessentials.heal.others: true
+      kessentials.heal.self: true
+  kessentials.heal.bypass:
+    description: Bypass heal cooldown
+    default: op
+  kessentials.heal.others:
+    description: /heal <player>
+    default: op
+  kessentials.heal.self:
+    description: /heal
+    default: op
