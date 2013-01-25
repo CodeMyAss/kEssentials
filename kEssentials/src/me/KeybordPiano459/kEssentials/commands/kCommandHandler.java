@@ -81,6 +81,9 @@ public class kCommandHandler implements CommandExecutor {
         } else if (cmd.getName().equalsIgnoreCase("killall")) {
             CommandKillall cmdkillall = new CommandKillall(plugin);
             return cmdkillall.execute(sender, args);
+        } else if (cmd.getName().equalsIgnoreCase("list")) {
+            CommandList cmdlist = new CommandList(plugin);
+            return cmdlist.execute(sender, args);
         } else if (cmd.getName().equalsIgnoreCase("me")) {
             CommandMe cmdme = new CommandMe(plugin);
             return cmdme.execute(sender, args);
@@ -102,6 +105,9 @@ public class kCommandHandler implements CommandExecutor {
         } else if (cmd.getName().equalsIgnoreCase("ping")) {
             CommandPing cmdping = new CommandPing(plugin);
             return cmdping.execute(sender, args);
+        } else if (cmd.getName().equalsIgnoreCase("platform")) {
+            CommandPlatform cmdplatform = new CommandPlatform(plugin);
+            return cmdplatform.execute(sender, args);
         } else if (cmd.getName().equalsIgnoreCase("rain")) {
             CommandRain cmdrain = new CommandRain(plugin);
             return cmdrain.execute(sender, args);

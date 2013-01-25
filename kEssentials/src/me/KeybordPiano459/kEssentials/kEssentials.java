@@ -21,6 +21,7 @@ public class kEssentials extends JavaPlugin {
     private God god;
     private TPS tps;
     private RAM ram;
+    private Rules rules;
     private Nickname nick;
     public Mute mute;
     
@@ -39,6 +40,7 @@ public class kEssentials extends JavaPlugin {
         //Create files
         folder.mkdirs();
         motd.createMOTD();
+        rules.createRules();
         warps.generateWarpsConfig();
         spawn.generateSpawnConfig();
         kconfig.createConfig();
@@ -66,6 +68,7 @@ public class kEssentials extends JavaPlugin {
         playerManager = new kPlayerManager(this);
         tps = new TPS(this);
         ram = new RAM();
+        rules = new Rules(this);
         warps = new Warps(this);
         motd = new MOTD(this);
         spawn = new Spawn(this);

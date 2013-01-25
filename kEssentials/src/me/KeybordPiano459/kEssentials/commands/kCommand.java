@@ -69,6 +69,7 @@ public class kCommand {
         "night",
         "online",
         "ping",
+        "platform",
         "rain",
         "ram",
         "reappear",
